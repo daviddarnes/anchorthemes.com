@@ -2,7 +2,7 @@
 <html lang="en-GB">
   <head>
     <title>
-      {% if page.url === site.url %}
+      {% if page.url == '/' or title == null %}
         {{ site.title }}
       {% else %}
         {{ title }} - {{ site.title }}
