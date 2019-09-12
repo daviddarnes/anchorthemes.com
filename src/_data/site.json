@@ -1,0 +1,54 @@
+{
+  "title": "Anchor Themes",
+  "twitter": "_AnchorThemes",
+  "author": "David Darnes",
+  "nav": {
+    "header": [
+      {
+        "url": "/",
+        "title": "Themes"
+      },
+      {
+        "url": "/about/",
+        "title": "About"
+      },
+      {
+        "url": "/submit/",
+        "title": "Submit"
+      },
+      {
+        "url": "/questions/",
+        "title": "Questions"
+      }
+    ],
+    "footer": [
+      {
+        "url": "/themes/",
+        "title": "Themes"
+      }
+    ]
+  },
+  "description": "Themes built for Anchor, obviously",
+  "sidebar": [
+    {
+      "title": "Anchor CMS",
+      "url": "http://anchorcms.com/docs"
+    },
+    {
+      "title": "Anchor Resources",
+      "url": "http://anchorcms.com/resources"
+    },
+    {
+      "title": "Anchor Discussion Forum",
+      "url": "http://forums.anchorcms.com/"
+    },
+    {
+      "title": "Anchor CMS on GitHub",
+      "url": "https://github.com/anchorcms"
+    },
+    {
+      "title": "Anchor CMS on Twitter",
+      "url": "https://twitter.com/anchorcms"
+    }
+  ]
+}

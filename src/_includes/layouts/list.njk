@@ -1,0 +1,31 @@
+---
+pagination:
+  data: collections.themes
+  size: 16
+  alias: themes
+---
+{% set title = null %}
+{% include 'partials/header.njk' %}
+<main class="main">
+  <div class="container">
+    <div class="row">
+      {% from "partials/loopblock.njk" import loopblock %}
+      {% for theme in themes %}
+        {{ loopblock(theme) }}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="pagination">
+    {% if page.url == "/" %}
+      <a class="next" href="{{ pagination.nextPageHref }}">More Themes &rarr;</a>
+    {% else %}
+      {% if pagination.previousPageHref %}
+        <a class="prev" href="{{ pagination.previousPageHref }}">&larr; Previous page</a>
+      {% endif %}
+      {% if pagination.nextPageHref %}
+        <a class="next" href="{{ pagination.nextPageHref }}">Next page &rarr;</a>
+      {% endif %}
+    {% endif %}
+  </div>
+</main>
+{% include 'partials/footer.njk' %}

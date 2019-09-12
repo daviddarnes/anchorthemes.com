@@ -1,0 +1,66 @@
+{% include 'partials/header.njk' %}
+<main class="main theme">
+  <article class="article container">
+    <div class="row">
+      <div class="span-5">
+        <h2 itemprop="description">{{ description }}</h2>
+        <div itemprop="about">{{ content | safe }}</div>
+
+        {% if author %}
+          {% set author %}
+            {% if author.url %}
+              <a itemprop="creator" target="_blank" rel="noopener" href="{{ author.url }}">{{ author.name }}</a>
+            {% else %}
+              {{ author.name }}
+            {% endif %}
+          {% endset %}
+          <h3>Created By {{ author }}</h3>
+        {% endif %}
+
+        <h3>Filed under <a itemprop="genre" href="category/{{ category }}">{{ category }}</a></h3>
+        <p>
+          {% if links.download %}
+            <a itemprop="url" href="{{ links.download }}">Download</a>
+          {% endif %}
+          {% if links.repo %}
+            <a itemprop="url" href="{{ links.repo }}">View repo</a>
+          {% endif %}
+          {% if links.demo %}
+            <a itemprop="sameAs" href="{{ links.demo }}">View demo</a>
+          {% endif %}
+
+          {% set twitterText %}
+            {{ title }} theme{% if author %} by {{ author.name }}{% endif %}
+          {% endset %}
+
+
+          <span class="button share-button"><label class="entypo-share" for="toggleshare">Share </label><input type="checkbox" id="toggleshare"><span><a href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener"></a><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url + url }}" class="entypo-facebook" target="_blank" rel="noopener"></a></span></span>
+        </p>
+      </div>
+      <div class="span-7 screens">
+        <div class="slider">
+          {% if images %}
+            {% for image in images %}
+              <img itemprop="image" src="{{ image }}" alt="{{ title }} image one" width="1080" height="840" />
+            {% endfor %}
+          {% else %}
+            <img src="{{ site.url }}/assets/images/placeholder-large.gif" alt="Temporary image" width="1080" height="840" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </article>
+  <section class="container related">
+    <div class="row">
+      <h2>Related Themes</h2>
+      {% from "partials/loopblock.njk" import loopblock %}
+      {% for theme in collections.themes %}
+        {% if loop.index < 4 %}
+          {{ loopblock(theme) }}
+        {% endif %}
+      {% endfor %}
+      {% include 'partials/ad-pact.njk' %}
+    </div>
+  </section><!-- .container -->
+</main>
+{% include 'partials/footer.njk' %}

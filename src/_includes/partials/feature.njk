@@ -1,0 +1,24 @@
+{% macro feature(theme) %}
+  <article class="article row" id="parallax">
+    <div class="span-6 hgroup">
+      <h1>Featured Theme: <a itemprop="name" href="{{ theme.url }}">{{ theme.data.title }}</a></h1>
+      <h2 itemprop="description">{{ theme.data.description }}</h2>
+    </div>
+    <figure class="figure span-6">
+      <a href="{{ theme.url }}">
+        <img itemprop="image" src="{{ theme.data.images[0] if theme.data.images[0] else "/assets/images/placeholder-large.gif" }}" alt="{{ theme.data.title }} image one" width="1080" height="840">
+      </a>
+      <span class="buttons">
+        {% if theme.data.links.download %}
+          <a itemprop="url" href="{{ theme.data.links.download }}">Download</a>
+        {% endif %}
+        {% if theme.data.links.repo %}
+          <a itemprop="url" href="{{ theme.data.links.repo }}">View repo</a>
+        {% endif %}
+        {% if theme.data.links.demo %}
+          <a itemprop="sameAs" href="{{ theme.data.links.demo }}">View demo</a>
+        {% endif %}
+      </span>
+    </figure>
+  </article>
+{% endmacro %}
