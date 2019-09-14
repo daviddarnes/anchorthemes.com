@@ -1,7 +1,8 @@
 ---
 title: "Bushwick"
 date: 2013-04-30 22:05:12
-category: Clean
+tags: 
+  - Clean
 ---
 
 Bushwick is a lightweight, responsive blogging theme, designed to show beautiful content alongside beautiful imagery.

@@ -1,7 +1,8 @@
 ---
 title: "Molovo"
 date: 2013-03-09 12:56:54
-category: Showcase
+tags: 
+  - Showcase
 ---
 
 "I like to push boundaries, break convention and challenge the norm.

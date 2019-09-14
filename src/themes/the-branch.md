@@ -1,7 +1,8 @@
 ---
 title: "The Branch"
 date: 2013-03-09 13:32:49
-category: Showcase
+tags: 
+  - Showcase
 ---
 
 Everyone gets their inspiration from somewhere different. It can be a product, a service, a book or film, a special person or their favourite pet. We want to know the inspiration behind some of the best creative minds out there.

@@ -1,4 +1,4 @@
 {
-  "tags": "themes",
+  "tags": ["themes"],
   "layout": "layouts/theme"
 }

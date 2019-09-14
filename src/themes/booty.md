@@ -1,7 +1,8 @@
 ---
 title: "Booty 3"
 date: 2014-09-14 23:08:23
-category: Simple
+tags: 
+  - Simple
 ---
 
 ###What's new in version 3?

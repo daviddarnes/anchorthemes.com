@@ -1,7 +1,8 @@
 ---
 title: "Love Coffee"
 date: 2013-06-27 21:53:44
-category: Showcase
+tags: 
+  - Showcase
 ---
 
 Love Coffee are an independent family-run business, committed to providing the freshest produce. All handmade in-store every morning.

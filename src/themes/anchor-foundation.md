@@ -1,7 +1,8 @@
 ---
 title: "Anchor Foundation"
 date: 2013-04-02 21:04:38
-category: Frameworks
+tags: 
+  - Frameworks
 ---
 
 Anchor Foundation is a simple and responsive theme built on the Zurb Foundation which makes it easy to add new features to the site.

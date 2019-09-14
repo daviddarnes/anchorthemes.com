@@ -1,7 +1,8 @@
 ---
 title: "Quark"
 date: 2013-04-08 21:02:04
-category: Minimal
+tags: 
+  - Minimal
 ---
 
 ### Features

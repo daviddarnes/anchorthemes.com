@@ -1,7 +1,8 @@
 ---
 title: "Deliberately Simple"
 date: 2015-07-19 14:50:12
-category: Simple
+tags: 
+  - Simple
 ---
 
 Super-lightweight & clean HTML5 theme for emphasising articles and content.

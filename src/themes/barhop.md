@@ -1,7 +1,8 @@
 ---
 title: "Barhop"
 date: 2014-09-15 00:08:36
-category: Clean
+tags: 
+  - Clean
 ---
 
 Barhop is a lightweight theme designed for Anchor CMS. Page templates are in minimal PHP and focus on the writing, not the extra stuff. Some features include:

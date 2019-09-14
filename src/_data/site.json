@@ -23,8 +23,21 @@
     ],
     "footer": [
       {
-        "url": "/themes/",
-        "title": "Themes"
+        "url": "http://anchorshowcase.com",
+        "title": "Anchor Showcase",
+        "color": "#d13361"
+      },
+      {
+        "url": "/terms/",
+        "title": "Terms"
+      },
+      {
+        "url": "/privacy/",
+        "title": "Privacy"
+      },
+      {
+        "url": "https://twitter.com/_AnchorThemes",
+        "title": "@_AnchorThemes"
       }
     ]
   },

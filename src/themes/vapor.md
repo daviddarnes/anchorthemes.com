@@ -1,7 +1,8 @@
 ---
 title: "Vapor"
 date: 2016-03-06 00:06:26
-category: Minimal
+tags: 
+  - Minimal
 ---
 
 Minimal and responsive with a focus on typography, Vapor fades into the background, bringing the focus to your content.

@@ -1,7 +1,8 @@
 ---
 title: "Manifesto"
 date: 2013-12-10 14:49:15
-category: "Content Driven"
+tags: 
+  - "Content Driven"
 ---
 
 ### Features

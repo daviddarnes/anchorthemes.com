@@ -1,7 +1,8 @@
 ---
 title: "Furzeface"
 date: 2013-12-10 13:55:00
-category: Showcase
+tags: 
+  - Showcase
 ---
 
 A colourful, fun, responsive theme for Anchor CMS to showcase my work and personal blog.

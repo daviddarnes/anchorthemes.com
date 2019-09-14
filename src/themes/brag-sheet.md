@@ -1,7 +1,8 @@
 ---
 title: "Brag Sheet"
 date: 2014-09-14 23:40:21
-category: Bright
+tags: 
+  - Bright
 ---
 
 ###Features

@@ -1,7 +1,8 @@
 ---
 title: "Ticket"
 date: 2013-04-23 21:25:05
-category: Powerful
+tags: 
+  - Powerful
 ---
 
 **Remember when someone told you "size isn't everything"? Well, they were right.**

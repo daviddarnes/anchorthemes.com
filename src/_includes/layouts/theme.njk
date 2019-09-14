@@ -17,7 +17,7 @@
           <h3>Created By {{ author }}</h3>
         {% endif %}
 
-        <h3>Filed under <a itemprop="genre" href="category/{{ category }}">{{ category }}</a></h3>
+        <h3>Filed under <a itemprop="genre" href="/category/{{ tags[1] | lower | replace(" ", "-") }}">{{ tags[1] }}</a></h3>
         <p>
           {% if links.download %}
             <a itemprop="url" href="{{ links.download }}">Download</a>
@@ -52,7 +52,7 @@
   </article>
   <section class="container related">
     <div class="row">
-      <h2>Related Themes</h2>
+      <h2 class="span-12">Related Themes</h2>
       {% from "partials/loopblock.njk" import loopblock %}
       {% for theme in collections.themes %}
         {% if loop.index < 4 %}

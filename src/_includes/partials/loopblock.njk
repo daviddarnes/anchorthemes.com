@@ -27,7 +27,7 @@
           by {{ author }}
         {% endif %}
       </h2>
-      <h3>Filed under <a itemprop="genre" href="category/{{ theme.data.category | lower | replace(" ", "-") }}">{{ theme.data.category }}</a></h3>
+      <h3>Filed under <a itemprop="genre" href="category/{{ theme.data.tags[1] | lower | replace(" ", "-") }}">{{ theme.data.tags[1] }}</a></h3>
 
       <small>Added <time itemprop="dateCreated" datetime="{{ theme.date }}">{{ theme.date.toLocaleDateString("en-GB", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) }}</time></small>
     </div>

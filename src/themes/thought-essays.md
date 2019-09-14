@@ -1,7 +1,8 @@
 ---
 title: "Thought Essays"
 date: 2014-05-28 23:26:27
-category: Minimal
+tags: 
+  - Minimal
 ---
 
 Based on Antonin Januska's own Bootstrap Thought Essays theme. A minimal and malleable theme.

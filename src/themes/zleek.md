@@ -1,7 +1,8 @@
 ---
 title: "Zleek"
 date: 2013-02-26 21:02:45
-category: Clean
+tags: 
+  - Clean
 ---
 
 Why Zleek is zo zexy:

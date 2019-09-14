@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /category/{{ tag | replace(" ", "-") | lower }}/
+---
+{% set title = tag %}
+
+{% include 'partials/header.njk' %}
+<main class="main">
+  <div class="container">
+    <div class="row">
+      {% from "partials/loopblock.njk" import loopblock %}
+      {% set tagList = collections[tag] %}
+      {% for theme in tagList | reverse %}
+        {{ loopblock(theme) }}
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% include 'partials/footer.njk' %}

@@ -1,7 +1,8 @@
 ---
 title: "Strata"
 date: 2016-03-05 23:57:58
-category: Clean
+tags: 
+  - Clean
 ---
 
 Strata is a blog theme with a stylish parallax scrolling sidebar. A clean and beautiful theme for AnchorCMS.
