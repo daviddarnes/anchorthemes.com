@@ -7,34 +7,32 @@
         <div itemprop="about">{{ content | safe }}</div>
 
         {% if author %}
-          {% set author %}
+          {% set authorLine %}
             {% if author.url %}
               <a itemprop="creator" target="_blank" rel="noopener" href="{{ author.url }}">{{ author.name }}</a>
             {% else %}
               {{ author.name }}
             {% endif %}
           {% endset %}
-          <h3>Created By {{ author }}</h3>
+          <h3>Created By {{ authorLine | safe }}</h3>
         {% endif %}
 
         <h3>Filed under <a itemprop="genre" href="/category/{{ tags[1] | lower | replace(" ", "-") }}">{{ tags[1] }}</a></h3>
         <p>
           {% if links.download %}
-            <a itemprop="url" href="{{ links.download }}">Download</a>
+            <a itemprop="url" class="button" href="{{ links.download }}">Download</a>
           {% endif %}
           {% if links.repo %}
-            <a itemprop="url" href="{{ links.repo }}">View repo</a>
+            <a itemprop="url" class="button" href="{{ links.repo }}">View repo</a>
           {% endif %}
           {% if links.demo %}
             <a itemprop="sameAs" href="{{ links.demo }}">View demo</a>
           {% endif %}
 
-          {% set twitterText %}
-            {{ title }} theme{% if author %} by {{ author.name }}{% endif %}
-          {% endset %}
+          {% set twitterText %}Check out {{ title }} theme{% if author.name %} by {{ author.name }}{% endif %}{% endset %}
 
 
-          <span class="button share-button"><label class="entypo-share" for="toggleshare">Share </label><input type="checkbox" id="toggleshare"><span><a href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener"></a><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url + url }}" class="entypo-facebook" target="_blank" rel="noopener"></a></span></span>
+          <span class="button share-button"><label class="entypo-share" for="toggleshare">Share </label><input type="checkbox" id="toggleshare"><span><a href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + page.url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener"></a><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url + url }}" class="entypo-facebook" target="_blank" rel="noopener"></a></span></span>
         </p>
       </div>
       <div class="span-7 screens">

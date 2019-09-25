@@ -6,17 +6,17 @@
     </div>
     <figure class="figure span-6">
       <a href="{{ theme.url }}">
-        <img itemprop="image" src="{{ theme.data.images[0] if theme.data.images[0] else "/assets/images/placeholder-large.gif" }}" alt="{{ theme.data.title }} image one" width="1080" height="840">
+        <img itemprop="image" src="{{ theme.url + theme.data.images[0] if theme.data.images[0] else "/assets/images/placeholder-large.gif" }}" alt="{{ theme.data.title }} image one" width="1080" height="840">
       </a>
       <span class="buttons">
         {% if theme.data.links.download %}
-          <a itemprop="url" href="{{ theme.data.links.download }}">Download</a>
+          <a class="button" itemprop="url" href="{{ theme.data.links.download }}">Download</a>
         {% endif %}
         {% if theme.data.links.repo %}
-          <a itemprop="url" href="{{ theme.data.links.repo }}">View repo</a>
+          <a class="button" itemprop="url" href="{{ theme.data.links.repo }}">View repo</a>
         {% endif %}
         {% if theme.data.links.demo %}
-          <a itemprop="sameAs" href="{{ theme.data.links.demo }}">View demo</a>
+          <a class="button" itemprop="sameAs" href="{{ theme.data.links.demo }}">View demo</a>
         {% endif %}
       </span>
     </figure>
