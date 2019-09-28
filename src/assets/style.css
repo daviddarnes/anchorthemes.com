@@ -280,9 +280,29 @@ code {
   border-radius: 5px;
   border: 1px solid #f8e7d3;
 }
+pre {
+  overflow-x: scroll;
+  background: #fdf8f2;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid #f8e7d3;
+}
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+}
 ::selection {
   background: #e36500;
   color: #fdf8f2;
+}
+
+.icon {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: bottom;
 }
 
 a.button,
@@ -312,6 +332,15 @@ a.button span,
   font-size: 1em;
   padding-left: 0;
   padding-right: .3em;
+}
+a.button--tweet {
+  background: #007ee3;
+}
+a.button.button--tweet:hover {
+  background: #0062b0;
+}
+a.button.button--tweet:active {
+  background: #005aa2;
 }
 a.button:hover,
 .screens a:hover,
@@ -517,6 +546,8 @@ a.button:active,
 }
 .main .figure {
   margin-left: 0;
+  max-height: 10.6rem;
+  overflow: hidden;
 }
 .main .figure > a {
   background: #f4f4f4;
@@ -627,6 +658,7 @@ a.button:active,
   position: relative;
   box-shadow: 0 0 20px rgba(198, 114, 10, 0.25);
   line-height: 0;
+  align-self: start;
 }
 .screens a,
 .error a {
@@ -639,7 +671,6 @@ a.button:active,
 .error a {
   padding-left: .4em;
   padding-right: .4em;
-  padding-bottom: .75em;
   line-height: 0.2em;
 }
 .screens .rslides_nav,

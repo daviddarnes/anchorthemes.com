@@ -1,15 +1,19 @@
-{% macro loopblock(theme) %}
-  <article class="article span-3" itemscope itemtype="http://schema.org/CreativeWork">
+{% macro loopblock(theme, index) %}
+  <article class="article span-3" style="order: {{ index }}" itemscope itemtype="http://schema.org/CreativeWork">
     <figure class="figure">
       <a href="{{ theme.url }}">
         <img itemprop="image" src="{{ theme.url + theme.data.images[0] if theme.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ theme.title }}" width="440" height="260" />
       </a>
       <span class="buttons">
         {% if theme.data.links.download %}
-          <a itemprop="url" href="{{ theme.data.links.download }}" class="button icon entypo-down" title="Download {{ theme.title }}">Download</a>
+          <a itemprop="url" href="{{ theme.data.links.download }}" class="button" title="Download {{ theme.title }}">
+            <svg class="icon icon-install"><use xlink:href="#icon-install"></use></svg>
+          </a>
         {% endif %}
         {% if theme.data.links.repo %}
-          <a itemprop="url" href="{{ theme.data.links.repo }}" class="button icon entypo-repo" target="_blank" rel="noopener" title="View {{ theme.title }} Repo">View repo</a>
+          <a itemprop="url" href="{{ theme.data.links.repo }}" class="button" target="_blank" rel="noopener" title="View {{ theme.title }} Repo">
+            <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+          </a>
         {% endif %}
       </span>
     </figure>

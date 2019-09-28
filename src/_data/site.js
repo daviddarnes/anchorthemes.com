@@ -1,5 +1,5 @@
 module.exports = {
-  url: process.env.ELEVENTY_ENV === 'development' ? 'http://localhost:8080' : 'https://anchorthemes.com',
+  url: process.env.ELEVENTY_ENV === 'dev' ? 'http://localhost:8080' : 'https://anchorthemes.com',
   title: "Anchor Themes",
   twitter: "_AnchorThemes",
   author: "David Darnes",

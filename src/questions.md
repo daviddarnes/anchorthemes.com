@@ -4,7 +4,7 @@ layout: "layouts/page"
 ---
 
 ## Can I submit a site I made using Anchor CMS?
-Yes, you certainly can! Just tweet us a link to the site you made and link to your own site. From there we'll add it to our special Showcase section.
+Yes, you certainly can! Just [follow these instructions](/submit/).
 
 ## GitHub, do I have to?
 Of course not, we just recommend GitHub because it's free and provides us with all the information, links and files we'll need to add your theme to our site. If you are able to provide all the things we stated above somewhere else thats fine.

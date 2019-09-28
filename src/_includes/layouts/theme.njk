@@ -20,19 +20,18 @@
         <h3>Filed under <a itemprop="genre" href="/category/{{ tags[1] | lower | replace(" ", "-") }}">{{ tags[1] }}</a></h3>
         <p>
           {% if links.download %}
-            <a itemprop="url" class="button" href="{{ links.download }}">Download</a>
+            <a itemprop="url" class="button" href="{{ links.download }}">Download <svg class="icon icon-install"><use xlink:href="#icon-install"></use></svg></a>
           {% endif %}
           {% if links.repo %}
-            <a itemprop="url" class="button" href="{{ links.repo }}">View repo</a>
+            <a itemprop="url" class="button" href="{{ links.repo }}">View repo <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
           {% endif %}
           {% if links.demo %}
-            <a itemprop="sameAs" href="{{ links.demo }}">View demo</a>
+            <a itemprop="sameAs" href="{{ links.demo }}">View demo <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
           {% endif %}
 
           {% set twitterText %}Check out {{ title }} theme{% if author.name %} by {{ author.name }}{% endif %}{% endset %}
 
-
-          <span class="button share-button"><label class="entypo-share" for="toggleshare">Share </label><input type="checkbox" id="toggleshare"><span><a href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + page.url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener"></a><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url + url }}" class="entypo-facebook" target="_blank" rel="noopener"></a></span></span>
+          <a class="button button--tweet" href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + page.url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener">Tweet <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
         </p>
       </div>
       <div class="span-7 screens">

@@ -10,13 +10,13 @@
       </a>
       <span class="buttons">
         {% if theme.data.links.download %}
-          <a class="button" itemprop="url" href="{{ theme.data.links.download }}">Download</a>
+          <a class="button" itemprop="url" href="{{ theme.data.links.download }}">Download <svg class="icon icon-install"><use xlink:href="#icon-install"></use></svg></a>
         {% endif %}
         {% if theme.data.links.repo %}
-          <a class="button" itemprop="url" href="{{ theme.data.links.repo }}">View repo</a>
+          <a class="button" itemprop="url" href="{{ theme.data.links.repo }}">View repo <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
         {% endif %}
         {% if theme.data.links.demo %}
-          <a class="button" itemprop="sameAs" href="{{ theme.data.links.demo }}">View demo</a>
+          <a class="button" itemprop="sameAs" href="{{ theme.data.links.demo }}">View demo <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
         {% endif %}
       </span>
     </figure>

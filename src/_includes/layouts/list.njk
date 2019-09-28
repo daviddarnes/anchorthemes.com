@@ -5,8 +5,9 @@
     <div class="row">
       {% from "partials/loopblock.njk" import loopblock %}
       {% for theme in collections.themes | reverse %}
-        {{ loopblock(theme) }}
+        {{ loopblock(theme, loop.index) }}
       {% endfor %}
+      {% include 'partials/ad-pact.njk' %}
     </div>
   </div>
 </main>
