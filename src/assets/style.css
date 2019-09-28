@@ -475,7 +475,7 @@ a.button:active,
   left: 0;
   margin-left: -5px;
 }
-.header .buttons a {
+.buttons a + a {
   margin-left: 10px;
 }
 .header p {

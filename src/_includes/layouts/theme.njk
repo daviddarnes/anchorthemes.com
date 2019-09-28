@@ -52,8 +52,8 @@
       <h2 class="span-12">Related Themes</h2>
       {% from "partials/loopblock.njk" import loopblock %}
       {% for theme in collections.themes %}
-        {% if loop.index < 4 %}
-          {{ loopblock(theme) }}
+        {% if tags[1] in theme.data.tags[1] %}
+          {{ loopblock(theme, loop.index) }}
         {% endif %}
       {% endfor %}
       {% include 'partials/ad-pact.njk' %}

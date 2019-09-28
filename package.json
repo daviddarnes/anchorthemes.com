@@ -21,5 +21,11 @@
   "homepage": "https://github.com/daviddarnes/anchorthemes.com#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "eleventy-plugin-lazyimages": "^1.0.3",
+    "eleventy-plugin-local-images": "^0.3.0",
+    "html-minifier": "^4.0.0"
   }
 }
