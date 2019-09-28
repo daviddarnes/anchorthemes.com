@@ -81,12 +81,12 @@
     {% endif %}
 
     <!-- Image relevant meta -->
-    {% if page.images[0] %}
+    {% if images[0] %}
       <!-- Open graph meta -->
-      <meta property="og:image" content="{{ site.url + page.images[0] }}">
+      <meta property="og:image" content="{{ site.url + page.url + images[0] }}">
 
       <!-- Twitter meta -->
-      <meta name="twitter:image" content="{{ site.url + page.images[0] }}">
+      <meta name="twitter:image" content="{{ site.url + page.url + images[0] }}">
     {% else %}
       <!-- Open graph meta -->
       <meta property="og:image" content="{{ site.url }}/assets/images/facebook.png">
