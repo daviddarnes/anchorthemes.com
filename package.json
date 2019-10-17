@@ -1,10 +1,9 @@
 {
-  "name": "anchorthemes.com",
+  "name": "AnchorThemes-AnchorShowcase",
   "version": "1.0.0",
-  "description": "⚓️Source repo for Anchor Themes",
-  "main": "index.js",
+  "description": "⚓️Source repo for Anchor Themes and Anchor Showcase",
+  "main": ".eleventy.js",
   "scripts": {
-    "start": "npm run dev",
     "dev": "ELEVENTY_ENV=dev eleventy --serve",
     "build": "ELEVENTY_ENV=prod eleventy"
   },
@@ -12,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/daviddarnes/anchorthemes.com.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {

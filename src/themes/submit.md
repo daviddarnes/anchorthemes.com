@@ -50,4 +50,4 @@ Alongside the new `index.md` file you can add screenshots as `.jpg` files. The d
     3.jpg
 ```
 
-Here's a handy [link for creating a new theme file](https://github.com/daviddarnes/anchorthemes.com/new/master/src/themes). Please ensure the pull request meets these criteria or else the addition will not get merged in. Happy theming! 🎉
+Here's a handy [link for creating a new theme file](https://github.com/daviddarnes/anchorthemes.com/new/master/src/themes/themes). Please ensure the pull request meets these criteria or else the addition will not get merged in. Happy theming! 🎉

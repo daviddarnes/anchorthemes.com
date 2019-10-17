@@ -148,13 +148,13 @@
             </nav>
           {% endif %}
           <aside class="aside span-5">
-            <p><strong>{{ site.title }}</strong> <span>–</span> {{ site.description }}</p>
+            <p><strong>{{ site.title }}</strong> <span>–</span> {{ site.description | safe }}</p>
           </aside>
         </div>
         {% if page.url === '/' %}
           {% for theme in collections.feature %}
             {% from "partials/feature.njk" import feature %}
-            {{ feature(theme) }}
+            {{ feature(theme, site) }}
           {% endfor %}
         {% else %}
           <div id="parallax" class="name">

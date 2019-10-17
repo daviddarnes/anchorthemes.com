@@ -1,7 +1,7 @@
-{% macro feature(theme) %}
+{% macro feature(theme, site) %}
   <article class="article row" id="parallax">
     <div class="span-6 hgroup">
-      <h1>Featured Theme: <a itemprop="name" href="{{ theme.url }}">{{ theme.data.title }}</a></h1>
+      <h1>Featured {{ site.collectionSingular }}: <a itemprop="name" href="{{ theme.url }}">{{ theme.data.title }}</a></h1>
       <h2 itemprop="description">{{ theme.data.description }}</h2>
     </div>
     <figure class="figure span-6">

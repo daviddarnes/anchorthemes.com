@@ -29,7 +29,8 @@ module.exports = function(config) {
 
   // Apply performance attributes to images
   config.addPlugin(lazyImages, {
-    cacheFile: ""
+    cacheFile: "",
+    imgSelector: "main img"
   });
 
   // Copy images over from Ghost
@@ -46,9 +47,9 @@ module.exports = function(config) {
       input: "src",
       output: "dist"
     },
-    templateFormats : ["njk", "md", "11ty.js", "css", "js", "jpg", "gif", "svg", "png", "ico", "woff", "ttf"],
-    htmlTemplateEngine : "njk",
-    markdownTemplateEngine : "njk",
+    templateFormats: ["njk", "md", "css", "js", "jpg", "gif", "svg", "png", "ico", "woff", "ttf"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
     passthroughFileCopy: true
   };
 };

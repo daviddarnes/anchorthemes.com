@@ -1,14 +1,9 @@
-module.exports = {
-  url: process.env.ELEVENTY_ENV === 'dev' ? 'http://localhost:8080' : 'https://anchorthemes.netlify.com',
-  title: "Anchor Themes",
-  twitter: "_AnchorThemes",
+const { ELEVENTY_ENV } = process.env;
+
+const siteData = {
   author: "David Darnes",
   nav: {
     header: [
-      {
-        url: "/",
-        title: "Themes"
-      },
       {
         url: "/about/",
         title: "About"
@@ -24,25 +19,15 @@ module.exports = {
     ],
     footer: [
       {
-        url: "http://anchorshowcase.com",
-        title: "Anchor Showcase",
-        color: "#d13361"
-      },
-      {
         url: "/terms/",
         title: "Terms"
       },
       {
         url: "/privacy/",
         title: "Privacy"
-      },
-      {
-        url: "https://twitter.com/_AnchorThemes",
-        title: "@_AnchorThemes"
       }
     ]
   },
-  description: "Themes built for Anchor, obviously",
   sidebar: [
     {
       title: "Anchor CMS",
@@ -65,4 +50,33 @@ module.exports = {
       url: "https://twitter.com/anchorcms"
     }
   ]
-}
+};
+
+const showcase = {
+  url: ELEVENTY_ENV == "dev" ? "http://localhost:8080/showcase" : "https://anchorshowcase.netlify.com",
+  title: "Anchor Showcase",
+  description: `That's right, sites made with <a href="https://anchorcms.com">Anchor</a>`,
+  twitter: "AnchorShowcase",
+  collection: "Sites",
+  collectionSingular: "Site"
+};
+
+const themes = {
+  url: ELEVENTY_ENV == "dev" ? "http://localhost:8080/themes" : "https://anchorthemes.netlify.com",
+  title: "Anchor Themes",
+  description: `Themes built for <a href="https://anchorcms.com">Anchor</a>, obviously`,
+  twitter: "_AnchorThemes",
+  collection: "Themes",
+  collectionSingular: "Theme"
+};
+
+module.exports = {
+  showcase: {
+    ...siteData,
+    ...showcase
+  },
+  themes: {
+    ...siteData,
+    ...themes
+  }
+};
