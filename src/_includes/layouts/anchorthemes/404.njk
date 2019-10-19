@@ -1,37 +1,33 @@
----
-layout: "layouts/default"
----
-{% from "partials/head.njk" import head %}
+{% extends "layouts/default.njk" %}
+
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
-
-{% block head %}
-  {{ head(site.anchorthemes) }}
-{% endblock %}
 
 {% block header %}
   {{ header(site.anchorthemes, page, page.url + " = Page not found") }}
 {% endblock %}
 
-<main class="main page">
-  <article class="article container">
-    <div class="row">
-      <section class="span-6">
-        <h2>Page could not be found</h2>
-        <p>The page <code>{{ page.url }}</code> was requested, but could not be found.<br/>
-        Sorry about that, try returning to the <a href="/">homepage</a> and trying again.</p>
-      </section>
-      <aside class="span-6">
-        <img class="error" src="{{ site.url }}/assets/images/404s/1.gif" alt="Four Oh Four" />
-      </aside>
-    </div>
-  </article>
-</main>
+{% block main %}
+  <main class="main page">
+    <article class="article container">
+      <div class="row">
+        <section class="span-6">
+          <h2>Page could not be found</h2>
+          <p>The page <code>{{ page.url }}</code> was requested, but could not be found.<br/>
+          Sorry about that, try returning to the <a href="/">homepage</a> and trying again.</p>
+        </section>
+        <aside class="span-6">
+          <img class="error" src="{{ site.url }}/assets/images/404s/1.gif" alt="Four Oh Four" />
+        </aside>
+      </div>
+    </article>
+  </main>
 
-<script type="text/javascript">
-  console.log('test');
-  document.querySelector('.error').setAttribute('src', `{{ site.url }}/assets/images/404s/${Math.floor(Math.random() * (8 - 1 + 1)) + 1}.gif`);
-</script>
+  <script type="text/javascript">
+    console.log('test');
+    document.querySelector('.error').setAttribute('src', `{{ site.url }}/assets/images/404s/${Math.floor(Math.random() * (8 - 1 + 1)) + 1}.gif`);
+  </script>
+{% endblock %}
 
 {% block footer %}
   {{ footer(site.anchorthemes, page) }}

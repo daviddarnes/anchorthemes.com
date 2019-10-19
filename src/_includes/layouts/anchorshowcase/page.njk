@@ -1,38 +1,34 @@
----
-layout: "layouts/default"
----
-{% from "partials/head.njk" import head %}
+{% extends "layouts/default.njk" %}
+
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
-
-{% block head %}
-  {{ head(site.anchorshowcase) }}
-{% endblock %}
 
 {% block header %}
   {{ header(site.anchorshowcase, page, title) }}
 {% endblock %}
 
-<main class="main page">
-  <article class="article container">
-    <div class="row">
-      <div class="span-8">
-        {% if description %}
-          <h2 itemprop="description">{{ description }}</h2>
-        {% endif %}
-        <div itemprop="about">{{ content | safe }}</div>
+{% block main %}
+  <main class="main page">
+    <article class="article container">
+      <div class="row">
+        <div class="span-8">
+          {% if description %}
+            <h2 itemprop="description">{{ description }}</h2>
+          {% endif %}
+          <div itemprop="about">{{ content | safe }}</div>
+        </div>
+        <aside class="aside span-4">
+          <h2>Useful Pages</h2>
+          <ul>
+            {% for item in site.anchorshowcase.sidebar %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </aside>
       </div>
-      <aside class="aside span-4">
-        <h2>Useful Pages</h2>
-        <ul>
-          {% for item in site.anchorshowcase.sidebar %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </aside>
-    </div>
-  </article>
-</main>
+    </article>
+  </main>
+{% endblock %}
 
 {% block footer %}
   {{ footer(site.anchorshowcase, page) }}

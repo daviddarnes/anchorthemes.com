@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  {% block head %}{% endblock %}
+  {% include "partials/head.njk" %}
   <body class="page-{{ page.url | replace("/", "") }}" itemscope itemtype="http://schema.org/CreativeWork">
     {% block header %}{% endblock %}
-    {{ content | safe }}
+    {% block main %}{% endblock %}
     {% block footer %}{% endblock %}
   </body>
 </html>

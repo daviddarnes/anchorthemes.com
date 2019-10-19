@@ -6,13 +6,8 @@ pagination:
 permalink: /anchorshowcase/category/{{ tag | replace(" ", "-") | lower }}/
 layout: "layouts/default"
 ---
-{% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
-
-{% block head %}
-  {{ head(site.anchorshowcase) }}
-{% endblock %}
 
 {% block header %}
   {{ header(site.anchorshowcase, page, tag) }}
