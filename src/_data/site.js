@@ -1,6 +1,6 @@
 const { ELEVENTY_ENV } = process.env;
 
-const siteData = {
+const defaultSiteData = {
   author: "David Darnes",
   nav: {
     header: [
@@ -52,31 +52,59 @@ const siteData = {
   ]
 };
 
-const showcase = {
-  url: ELEVENTY_ENV == "dev" ? "http://localhost:8080/showcase" : "https://anchorshowcase.netlify.com",
+const anchorShowcaseData = {
+  url: ELEVENTY_ENV == "dev" ? "http://localhost:8080/anchorshowcase" : "https://anchorshowcase.netlify.com",
   title: "Anchor Showcase",
   description: `That's right, sites made with <a href="https://anchorcms.com">Anchor</a>`,
   twitter: "AnchorShowcase",
   collection: "Sites",
-  collectionSingular: "Site"
+  collectionSingular: "Site",
+  nav: {
+    header: defaultSiteData.nav.header.map(({ title, url }) => {
+      return {
+        url: "/anchorshowcase" + url,
+        title: title
+      }
+    }),
+    footer: defaultSiteData.nav.footer.map(({ title, url }) => {
+      return {
+        url: "/anchorshowcase" + url,
+        title: title
+      }
+    }),
+  }
 };
 
-const themes = {
-  url: ELEVENTY_ENV == "dev" ? "http://localhost:8080/themes" : "https://anchorthemes.netlify.com",
+const anchorThemesData = {
+  url: ELEVENTY_ENV == "dev" ? "http://localhost:8080/anchorthemes" : "https://anchorthemes.netlify.com",
   title: "Anchor Themes",
   description: `Themes built for <a href="https://anchorcms.com">Anchor</a>, obviously`,
   twitter: "_AnchorThemes",
   collection: "Themes",
-  collectionSingular: "Theme"
+  collectionSingular: "Theme",
+  nav: {
+    header: defaultSiteData.nav.header.map(({ title, url }) => {
+      return {
+        url: "/anchorthemes" + url,
+        title: title
+      }
+    }),
+    footer: defaultSiteData.nav.footer.map(({ title, url }) => {
+      return {
+        url: "/anchorthemes" + url,
+        title: title
+      }
+    }),
+  }
 };
 
 module.exports = {
-  showcase: {
-    ...siteData,
-    ...showcase
+  anchorshowcase: {
+    ...defaultSiteData,
+    ...anchorShowcaseData
   },
-  themes: {
-    ...siteData,
-    ...themes
+  anchorthemes: {
+    ...defaultSiteData,
+    ...anchorThemesData
   }
 };

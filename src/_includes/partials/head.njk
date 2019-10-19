@@ -1,0 +1,133 @@
+{% macro head(site) %}
+  <head>
+    <title>
+      {% if page.url == '/' or page.title == null %}
+        {{ site.title }}
+      {% else %}
+        {{ page.title }} - {{ site.title }}
+      {% endif %}
+    </title>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed/">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Open graph meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="article:author" content="David Darnes" />
+
+    <!-- Twitter meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ site.twitter }}">
+    <meta name="twitter:creator" content="@{{ site.author }}">
+    <meta name="twitter:domain" content="{{ site.url }}">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/images/favicon/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-title" content="⚓ Themes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="{{ site.url }}/assets/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="{{ site.url }}/assets/images/favicon/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="{{ site.url }}/assets/images/favicon/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="{{ site.url }}/assets/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ site.url }}/assets/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ site.url }}/assets/images/favicon/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#fdf8f2">
+    <meta name="msapplication-TileImage" content="{{ site.url }}/assets/images/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="{{ site.url }}/assets/images/favicon/browserconfig.xml">
+    <meta name="application-name" content="{{ site.title }}" />
+
+    <!-- Page relevant meta -->
+    {% if page.url === site.url %}
+      <!-- General meta -->
+      <meta name="description" content="{{ site.description }}">
+
+      <!-- Open graph meta -->
+      <meta property="og:url" content="http://anchorthemes.com">
+      <meta property="og:title" content="{{ site.title }}">
+      <meta property="og:description" content="{{ site.description }}">
+
+      <!-- Twitter meta -->
+      <meta name="twitter:url" content="http://anchorthemes.com">
+      <meta name="twitter:title" content="{{ site.title }}">
+      <meta name="twitter:description" content="{{ site.description }}">
+    {% else %}
+      <!-- General meta -->
+      <meta name="description" content="{{ page.description if page.description else site.description }}">
+
+      <!-- Open graph meta -->
+      <meta property="og:url" content="{{ site.url + page.url }}">
+      <meta property="og:title" content="{{ title }} - {{ site.title }}">
+      <meta property="og:description" content="{{ page.description if page.description else site.description }}">
+
+      <!-- Twitter meta -->
+      <meta name="twitter:url" content="{{ site.url + page.url }}">
+      <meta name="twitter:title" content="{{ title }} - {{ site.title }}">
+      <meta name="twitter:description" content="{{ page.description if page.description else site.description }}">
+    {% endif %}
+
+    <!-- Image relevant meta -->
+    {% if images[0] %}
+      <!-- Open graph meta -->
+      <meta property="og:image" content="{{ site.url + page.url + images[0] }}">
+
+      <!-- Twitter meta -->
+      <meta name="twitter:image" content="{{ site.url + page.url + images[0] }}">
+    {% else %}
+      <!-- Open graph meta -->
+      <meta property="og:image" content="{{ site.url }}/assets/images/facebook.png">
+
+      <!-- Twitter meta -->
+      <meta name="twitter:image" content="{{ site.url }}/assets/images/twitter.png">
+    {% endif %}
+
+    <!-- Fancy javascript -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      // After midnight but before 5am...
+      var currentTime = new Date().getHours();
+      if (0 <= currentTime&&currentTime < 5 || localStorage.nightMode=="true") {
+        jQuery('head').append("<link rel='stylesheet' href='{{ site.url }}/assets/gizmo.css' type='text/css' title='gizmo'>");
+      }
+      window.onkeypress = function(e) {
+        // Pressing 'n' adds...
+        if( e.keyCode == 110 ) {
+          localStorage.nightMode = true;
+          if(!jQuery('link[title=gizmo]').length){
+            jQuery('head').append("<link rel='stylesheet' href='{{ site.url }}/assets/gizmo.css' type='text/css' title='gizmo'>");
+          }
+        }
+        // Pressing 'd' removes...
+        if( e.keyCode == 100 ) {
+          localStorage.nightMode = false;
+          jQuery('link[title=gizmo]').remove();
+        }
+      }
+      // The turret wants to know...
+      var title = document.title;
+      var alttitle = "Are you still there?";
+      window.onblur = function () { document.title = alttitle; };
+      window.onfocus = function () { document.title = title; };
+    </script>
+
+    {% if page.css or page.js %}
+      <!-- Custom CSS -->
+      <style>{{ page.css }}</style>
+      <!--  Custom Javascript -->
+      <script>{{ page.js }}</script>
+    {% endif %}
+  </head>
+{% endmacro %}

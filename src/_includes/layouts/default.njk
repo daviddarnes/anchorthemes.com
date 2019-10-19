@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  {% block head %}{% endblock %}
+  <body class="page-{{ page.url | replace("/", "") }}" itemscope itemtype="http://schema.org/CreativeWork">
+    {% block header %}{% endblock %}
+    {{ content | safe }}
+    {% block footer %}{% endblock %}
+  </body>
+</html>

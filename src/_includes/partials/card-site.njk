@@ -1,0 +1,34 @@
+{% macro card(site, index) %}
+  <article class="article span-3" style="order: {{ index }}" itemscope itemtype="http://schema.org/CreativeWork">
+    <figure class="figure">
+      <a href="{{ site.url }}">
+        <img itemprop="image" src="{{ site.url + site.data.images[0] if site.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ site.title }}" width="440" height="260" />
+      </a>
+      <span class="buttons">
+        {% if site.data.links.url %}
+          <a itemprop="url" href="{{ site.data.links.url }}" class="button" target="_blank" rel="noopener" title="View {{ site.title }}">
+            <svg class="icon icon-browser"><use xlink:href="#icon-github"></use></svg>
+          </a>
+        {% endif %}
+      </span>
+    </figure>
+    <div class="hgroup">
+      <h2>
+        <a itemprop="name" href="{{ site.url }}">{{ site.data.title }}</a>
+        {% if site.data.author %}
+          {% set authorLine %}
+            {% if site.data.author.url %}
+              <a itemprop="creator" target="_blank" rel="noopener" href="{{ site.data.author.url }}">{{ site.data.author.name }}</a>
+            {% else %}
+              {{ site.data.author.name }}
+            {% endif %}
+          {% endset %}
+          by {{ authorLine | safe }}
+        {% endif %}
+      </h2>
+      <h3>Filed under <a itemprop="genre" href="/anchorshowcase/category/{{ site.data.tags[1] | lower | replace(" ", "-") }}">{{ site.data.tags[1] }}</a></h3>
+
+      <small>Added <time itemprop="dateCreated" datetime="{{ site.date }}">{{ site.date.toLocaleDateString("en-GB", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) }}</time></small>
+    </div>
+  </article>
+{% endmacro %}
