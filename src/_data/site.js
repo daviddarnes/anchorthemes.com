@@ -5,6 +5,10 @@ const defaultSiteData = {
   nav: {
     header: [
       {
+        url: "/",
+        title: "Home"
+      },
+      {
         url: "/about/",
         title: "About"
       },
