@@ -3,6 +3,7 @@
 {% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
+{% from "partials/ad.njk" import ad %}
 
 {% block head %}
   {{ head(site.anchorshowcase, page, title, description) }}
@@ -18,9 +19,9 @@
       <div class="row">
         {% from "partials/card-site.njk" import card %}
         {% for item in collections.sites | reverse %}
-          {{ card(item, loop.index) }}
+          {{ card(item, site.anchorshowcase, loop.index) }}
         {% endfor %}
-        {% include 'partials/ad-pact.njk' %}
+        {{ ad(site.anchorshowcase) }}
       </div>
     </div>
   </main>

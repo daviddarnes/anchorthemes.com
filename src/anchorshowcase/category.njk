@@ -8,6 +8,7 @@ layout: "layouts/default"
 ---
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
+{% from "partials/ad.njk" import ad %}
 
 {% block header %}
   {{ header(site.anchorshowcase, page, tag) }}
@@ -19,10 +20,10 @@ layout: "layouts/default"
       {% from "partials/card-site.njk" import card %}
       {% set tagList = collections[tag] %}
       {% for item in tagList | reverse %}
-        {{ card(item, loop.index) }}
+        {{ card(item, site.anchorshowcase, loop.index) }}
       {% endfor %}
-      {% include 'partials/ad-pact.njk' %}
-      </div>
+      {{ ad(site.anchorshowcase) }}
+    </div>
   </div>
 </main>
 

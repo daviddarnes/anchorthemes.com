@@ -3,6 +3,7 @@
 {% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
+{% from "partials/ad.njk" import ad %}
 
 {% block head %}
   {{ head(site.anchorthemes, page, title, description) }}
@@ -18,9 +19,9 @@
       <div class="row">
         {% from "partials/card-theme.njk" import card %}
         {% for item in collections.themes | reverse %}
-          {{ card(item, loop.index) }}
+          {{ card(item, site.anchorthemes, loop.index) }}
         {% endfor %}
-        {% include 'partials/ad-pact.njk' %}
+        {{ ad(site.anchorthemes) }}
       </div>
     </div>
   </main>

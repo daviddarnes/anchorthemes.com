@@ -3,6 +3,7 @@
 {% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
+{% from "partials/ad.njk" import ad %}
 
 {% block head %}
   {{ head(site.anchorshowcase, page, title, description) }}
@@ -59,12 +60,12 @@
       <div class="row">
         <h2 class="span-12">Related Sites</h2>
         {% from "partials/card-site.njk" import card %}
-        {% for site in collections.sites %}
-          {% if tags[1] in site.data.tags[1] %}
-            {{ card(site, loop.index) }}
+        {% for item in collections.sites %}
+          {% if tags[1] in item.data.tags[1] %}
+            {{ card(item, site.anchorshowcase, loop.index) }}
           {% endif %}
         {% endfor %}
-        {% include 'partials/ad-pact.njk' %}
+        {{ ad(site.anchorshowcase) }}
       </div>
     </section>
   </main>

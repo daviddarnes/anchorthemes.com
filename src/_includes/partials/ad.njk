@@ -1,0 +1,27 @@
+{% macro ad(site) %}
+  {% set url = "https://www.pactcoffee.com/sign-up?voucher=COOLBEANS" %}
+  {% set title = "Like Coffee? Try Pact for £1" %}
+
+  <article class="article ad span-3" itemscope itemtype="http://schema.org/Organization">
+    <figure class="figure">
+      <a href="{{ url }}" title="{{ title }}">
+        <img itemprop="logo" src="{{ site.url }}/assets/images/pactcoffee.png" alt="{{ title }}" width="440" height="260">
+      </a>
+      <span class="buttons">
+        <a href="{{ url }}" class="button" target="_blank" rel="noopener" title="{{ title }}">
+          <svg class="icon icon-shop"><use xlink:href="#icon-shop"></use></svg>
+        </a>
+      </span>
+    </figure>
+    <div class="hgroup">
+      <h2><a href="{{ url }}" title="{{ title }}" itemprop="name">Like Coffee? Try Pact</a></h2>
+      <h3>Get your first bag <a href="{{ url }}" title="{{ title }}">for £1</a></h3>
+      <small>Advertisement</small>
+    </div>
+  </article>
+  <script type="text/javascript">
+    const max = {{ collections.themes.length }};
+    const min = 1;
+    document.querySelector('.ad').style.order = Math.floor(Math.random() * (max - min)) + min;
+  </script>
+{% endmacro %}

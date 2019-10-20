@@ -3,6 +3,7 @@
 {% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
+{% from "partials/ad.njk" import ad %}
 
 {% block head %}
   {{ head(site.anchorthemes, page, title, description, images) }}
@@ -65,12 +66,12 @@
       <div class="row">
         <h2 class="span-12">Related Themes</h2>
         {% from "partials/card-theme.njk" import card %}
-        {% for theme in collections.themes %}
-          {% if tags[1] in theme.data.tags[1] %}
-            {{ card(theme, loop.index) }}
+        {% for item in collections.themes %}
+          {% if tags[1] in item.data.tags[1] %}
+            {{ card(item, site.anchorthemes, loop.index) }}
           {% endif %}
         {% endfor %}
-        {% include 'partials/ad-pact.njk' %}
+        {{ ad(site.anchorthemes) }}
       </div>
     </section>
   </main>
