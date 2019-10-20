@@ -1,8 +1,8 @@
 {% macro card(item, site, index) %}
   <article class="article span-3" style="order: {{ index }}" itemscope itemtype="http://schema.org/CreativeWork">
     <figure class="figure">
-      <a href="{{ item.url }}">
-        <img itemprop="image" src="{{ item.url + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ item.data.title }}" width="440" height="260" />
+      <a href="/sites/{{ item.fileSlug }}">
+        <img itemprop="image" src="/sites/{{ item.fileSlug + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ item.data.title }}" width="440" height="260" />
       </a>
       <span class="buttons">
         {% if item.data.links.url %}
