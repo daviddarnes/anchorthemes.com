@@ -703,6 +703,7 @@ a.button:active,
   position: absolute;
   top: 47%;
   font-size: 1.4em;
+  z-index: 2;
 }
 .screens .prev,
 .error .prev {
