@@ -5,5 +5,15 @@
     {% block header %}{% endblock %}
     {% block main %}{% endblock %}
     {% block footer %}{% endblock %}
+    <script type="text/javascript">
+      // Parallax header content
+      window.onscroll = function emParallax() {
+          if(window.pageYOffset>1) {
+              document.getElementById("parallax").style["-webkit-transform"] = "translateY("+(window.pageYOffset/3)+"px)";
+          } else {
+              document.getElementById("parallax").style["-webkit-transform"] = "translateY(0px)";
+          }
+      }
+    </script>
   </body>
 </html>
