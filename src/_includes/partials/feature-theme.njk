@@ -7,7 +7,11 @@
     </div>
     <figure class="figure span-6">
       <a href="{{ url }}">
-        <img itemprop="image" src="{{ url + item.data.images[0] if item.data.images[0] else "/assets/images/placeholder-large.gif" }}" alt="{{ item.data.title }} image one" width="1080" height="840">
+        {% if item.data.images %}
+          <img itemprop="image" src="{{ url + item.data.images[0] }}" alt="{{ item.data.title }} image one">
+        {% else %}
+          <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
+        {% endif %}
       </a>
       <span class="buttons">
         {% if item.data.links.download %}

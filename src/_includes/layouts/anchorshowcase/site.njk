@@ -50,7 +50,7 @@
                 <img itemprop="image" src="{{ image }}" alt="{{ title }} image one" width="1080" height="840" />
               {% endfor %}
             {% else %}
-              <img src="{{ site.url }}/assets/images/placeholder-large.gif" alt="Temporary image" width="1080" height="840" />
+              <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
             {% endif %}
           </div>
         </div>

@@ -3,7 +3,11 @@
   <article class="article span-3" itemscope itemtype="http://schema.org/CreativeWork">
     <figure class="figure">
       <a href="{{ url }}">
-        <img itemprop="image" src="{{ url + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ item.data.title }}" width="440" height="260" />
+        {% if item.data.images %}
+        <img itemprop="image" src="{{ url + item.data.images[0] }}" alt="{{ item.data.title }}" />
+        {% else %}
+          <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
+        {% endif %}
       </a>
       <span class="buttons">
         {% if item.data.links.download %}
