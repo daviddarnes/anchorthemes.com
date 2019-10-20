@@ -2,7 +2,7 @@
   <article class="article span-3" style="order: {{ index }}" itemscope itemtype="http://schema.org/CreativeWork">
     <figure class="figure">
       <a href="{{ item.url }}">
-        <img itemprop="image" src="{{ item.url + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ theme.title }}" width="440" height="260" />
+        <img itemprop="image" src="{{ item.url + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ item.data.title }}" width="440" height="260" />
       </a>
       <span class="buttons">
         {% if item.data.links.download %}
