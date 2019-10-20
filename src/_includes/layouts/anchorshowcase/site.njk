@@ -1,10 +1,15 @@
 {% extends "layouts/default.njk" %}
 
+{% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
 
+{% block head %}
+  {{ head(site.anchorshowcase, page, title, description) }}
+{% endblock %}
+
 {% block header %}
-  {{ header(site.anchorshowcase, page, title) }}
+  {{ header(site.anchorshowcase, page, title, images) }}
 {% endblock %}
 
 {% block main %}

@@ -1,7 +1,12 @@
 {% extends "layouts/default.njk" %}
 
+{% from "partials/head.njk" import head %}
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
+
+{% block head %}
+  {{ head(site.anchorshowcase) }}
+{% endblock %}
 
 {% block header %}
   {{ header(site.anchorshowcase, page, page.url + " = Page not found") }}

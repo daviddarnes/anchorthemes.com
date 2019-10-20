@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: About
 layout: "layouts/anchorshowcase/page"
 ---
 
