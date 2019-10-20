@@ -5,14 +5,10 @@ layout: "layouts/anchorthemes/page"
 
 ## Adding your theme to Anchor Themes
 
-Adding a theme to our site is very easy, all it takes a well maintained GitHub repo.
-
-## Submitting
-
-Create a new pull request to [our open source Anchor Themes site repo](https://github.com/daviddarnes/anchor-themes-showcase) with a new `index.md` file using a specific file name and path:
+Create a new pull request to [our open source Anchor Themes & Showcase site repo](https://github.com/daviddarnes/anchor-themes-showcase) with a new `index.md` file using a specific file name and path:
 
 ```
-/src/themes/YOURTHEMENAME/index.md
+/src/anchorthemes/theme/YOURTHEMENAME/index.md
 ```
 
 Use the following template for the contents of the `index.md` file:
@@ -37,17 +33,17 @@ images:
   - 3.jpg
 ---
 
-A somewhat brief description of your theme. You can put maybe a paragraph or two in here, list some features too if you like
+A somewhat brief description of your theme. You can put maybe a paragraph or two in here, list some features too if you like.
 ```
 
 Alongside the new `index.md` file you can add screenshots as `.jpg` files. The dimensions should be `1080` by `840` in pixels. Here's an example of the file structure:
 
 ``` txt
-/src/themes/yourthemename/
+/src/anchorthemes/themes/yourthemename/
     index.md
     1.jpg
     2.jpg
     3.jpg
 ```
 
-Here's a handy [link for creating a new theme file](https://github.com/daviddarnes/anchor-themes-showcase/tree/master/src/anchorthemes/themes). Please ensure the pull request meets these criteria or else the addition will not get merged in. Happy theming! 🎉
+Here's a handy [link for creating a new theme file](https://github.com/daviddarnes/anchor-themes-showcase/new/master/src/anchorthemes/themes). Please ensure the pull request meets these criteria or else the addition will not get merged in. Happy theming! 🎉

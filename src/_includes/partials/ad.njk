@@ -20,7 +20,11 @@
     </div>
   </article>
   <script type="text/javascript">
-    const max = {{ collections.themes.length }};
+    const cards = [...document.querySelectorAll('article.span-3')];
+    cards.map((item, index) => {
+      item.style.order = index;
+    });
+    const max = cards.length - 1;
     const min = 1;
     document.querySelector('.ad').style.order = Math.floor(Math.random() * (max - min)) + min;
   </script>

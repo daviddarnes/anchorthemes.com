@@ -4,13 +4,18 @@
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
 {% from "partials/ad.njk" import ad %}
+{% from "partials/feature-site.njk" import feature %}
+
+{% set feature %}
+  {{ feature(collections.featuredSite[0]) }}
+{% endset %}
 
 {% block head %}
   {{ head(site.anchorshowcase, page, title, description) }}
 {% endblock %}
 
 {% block header %}
-  {{ header(site.anchorshowcase, page, "") }}
+  {{ header(site.anchorshowcase, page, "", feature) }}
 {% endblock %}
 
 {% block main %}

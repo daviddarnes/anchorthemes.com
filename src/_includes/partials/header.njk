@@ -1,4 +1,4 @@
-{% macro header(site, page, title) %}
+{% macro header(site, page, title, feature) %}
   {% include 'partials/icons.svg' %}
   <header class="header">
     <div class="container">
@@ -18,8 +18,8 @@
           <p><strong>{{ site.title }}</strong> <span>–</span> {{ site.description | safe }}</p>
         </aside>
       </div>
-      {% if page.url === '/' %}
-        FEATURE HERE
+      {% if feature %}
+        {{ feature | safe }}
       {% else %}
         <div id="parallax" class="name">
             <h1>{{ title }}</h1>

@@ -68,12 +68,19 @@ const anchorShowcaseData = {
         title: title
       }
     }),
-    footer: defaultSiteData.nav.footer.map(({ title, url }) => {
-      return {
-        url: anchorShowcaseURL + url,
-        title: title
-      }
-    }),
+    footer: [
+      {
+        title: "Anchor Themes",
+        url: "https://anchorthemes.com",
+        color: "#e36500"
+      },
+      ...defaultSiteData.nav.footer.map(({ title, url }) => {
+        return {
+          url: anchorShowcaseURL + url,
+          title: title
+        }
+      })
+    ]
   }
 };
 
@@ -93,12 +100,19 @@ const anchorThemesData = {
         title: title
       }
     }),
-    footer: defaultSiteData.nav.footer.map(({ title, url }) => {
-      return {
-        url: anchorThemesURL + url,
-        title: title
-      }
-    }),
+    footer: [
+      {
+        title: "Anchor Showcase",
+        url: "https://anchorshowcase.com",
+        color: "#e11d82"
+      },
+      ...defaultSiteData.nav.footer.map(({ title, url }) => {
+        return {
+          url: anchorThemesURL + url,
+          title: title
+        }
+      })
+    ]
   }
 };
 

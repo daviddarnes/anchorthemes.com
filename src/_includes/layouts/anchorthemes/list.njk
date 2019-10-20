@@ -4,13 +4,18 @@
 {% from "partials/header.njk" import header %}
 {% from "partials/footer.njk" import footer %}
 {% from "partials/ad.njk" import ad %}
+{% from "partials/feature-theme.njk" import feature %}
+
+{% set feature %}
+  {{ feature(collections.featuredTheme[0]) }}
+{% endset %}
 
 {% block head %}
   {{ head(site.anchorthemes, page, title, description) }}
 {% endblock %}
 
 {% block header %}
-  {{ header(site.anchorthemes, page, "") }}
+  {{ header(site.anchorthemes, page, "", feature) }}
 {% endblock %}
 
 {% block main %}

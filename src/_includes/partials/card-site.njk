@@ -1,8 +1,9 @@
 {% macro card(item, site, index) %}
-  <article class="article span-3" style="order: {{ index }}" itemscope itemtype="http://schema.org/CreativeWork">
+  {% set url = item.url if item.data.env == "dev" else item.url.replace("anchorshowcase/", "") %}
+  <article class="article span-3" itemscope itemtype="http://schema.org/CreativeWork">
     <figure class="figure">
-      <a href="/sites/{{ item.fileSlug }}/">
-        <img itemprop="image" src="/sites/{{ item.fileSlug + '/' + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ item.data.title }}" width="440" height="260" />
+      <a href="{{ url }}">
+        <img itemprop="image" src="{{ url + item.data.images[0] if item.data.images else '/assets/images/placeholder-small.gif' }}" alt="{{ item.data.title }}" width="440" height="260" />
       </a>
       <span class="buttons">
         {% if item.data.links.url %}
@@ -14,7 +15,7 @@
     </figure>
     <div class="hgroup">
       <h2>
-        <a itemprop="name" href="/sites/{{ item.fileSlug }}/">{{ item.data.title }}</a>
+        <a itemprop="name" href="{{ url }}">{{ item.data.title }}</a>
         {% if item.data.author %}
           {% set authorLine %}
             {% if item.data.author.url %}

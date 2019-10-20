@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block header %}
-  {{ header(site.anchorthemes, page, title, images) }}
+  {{ header(site.anchorthemes, page, title) }}
 {% endblock %}
 
 {% block main %}
@@ -75,6 +75,36 @@
       </div>
     </section>
   </main>
+  <!-- Super simple slider plugin from http://responsive-slides.viljamis.com -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.js"></script>
+  <script type="text/javascript">
+      // responsiveslides.min.js run script.
+      $(function () {
+              $(".slider").responsiveSlides({
+                  nav: true,
+                  pause: true,
+                  prevText: `<svg class="icon icon-chevron-thin-left"><use xlink:href="#icon-chevron-thin-left"></use></svg>`,
+                  nextText: `<svg class="icon icon-chevron-thin-right"><use xlink:href="#icon-chevron-thin-right"></use></svg>`,
+              });
+      });
+      // Mobile menu toggle
+      $(document).ready(function() {
+          var menu = $('.menu'),
+              button = $('.toggle');
+          button.on('click', function(e) {
+              e.preventDefault();
+              menu.toggleClass('open');
+          });
+      });
+      // Parallax header content
+      window.onscroll = function emParallax() {
+          if(window.pageYOffset>1) {
+              document.getElementById("parallax").style["-webkit-transform"] = "translateY("+(window.pageYOffset/3)+"px)";
+          } else {
+              document.getElementById("parallax").style["-webkit-transform"] = "translateY(0px)";
+          }
+      }
+  </script>
 {% endblock %}
 
 {% block footer %}
