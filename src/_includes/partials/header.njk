@@ -15,7 +15,7 @@
           </nav>
         {% endif %}
         <aside class="aside span-5">
-          <p><strong>{{ site.title }}</strong> <span>–</span> {{ site.description | safe }}</p>
+          <p><strong>{{ site.title }}</strong> <span>–</span> {{ site.description.replace("Anchor", "<a href=\"https://anchorcms.com\">Anchor</a>") | safe }}</p>
         </aside>
       </div>
       {% if feature %}

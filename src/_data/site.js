@@ -57,7 +57,7 @@ const anchorShowcaseURL = ELEVENTY_ENV == "dev" ? "http://localhost:8080/anchors
 const anchorShowcaseData = {
   url: anchorShowcaseURL,
   title: "Anchor Showcase",
-  description: `That's right, sites made with <a href="https://anchorcms.com">Anchor</a>`,
+  description: `That's right, sites made with Anchor`,
   twitter: "AnchorShowcase",
   collection: "Sites",
   collectionSingular: "Site",
@@ -89,7 +89,7 @@ const anchorThemesURL = ELEVENTY_ENV == "dev" ? "http://localhost:8080/anchorthe
 const anchorThemesData = {
   url: anchorThemesURL,
   title: "Anchor Themes",
-  description: `Themes built for <a href="https://anchorcms.com">Anchor</a>, obviously`,
+  description: `Themes built for Anchor, obviously`,
   twitter: "_AnchorThemes",
   collection: "Themes",
   collectionSingular: "Theme",
