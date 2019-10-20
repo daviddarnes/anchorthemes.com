@@ -28,10 +28,10 @@ module.exports = function(config) {
   config.addPlugin(pluginRSS);
 
   // Apply performance attributes to images
-  config.addPlugin(lazyImages, {
-    cacheFile: "",
-    imgSelector: "main img"
-  });
+  // config.addPlugin(lazyImages, {
+  //   cacheFile: "",
+  //   imgSelector: "main img"
+  // });
 
   // Copy images over from Ghost
   config.addPlugin(localImages, {
