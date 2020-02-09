@@ -1,0 +1,14 @@
+---
+layout: "layouts/default.njk"
+title: "Welcome"
+---
+
+<main class="main">
+  <div class="container row">
+    {% from "partials/card.njk" import card %}
+    {% for submission in collections.submission | reverse %}
+      {{ card(submission, loop.index) }}
+    {% endfor %}
+    {% include 'partials/ad.njk' %}
+  </div>
+</main>

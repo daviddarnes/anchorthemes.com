@@ -1,0 +1,27 @@
+{% set featured = collections.featuredTheme[0] %}
+<article class="container article row" id="parallax">
+  <div class="span-6 hgroup">
+    <h1>Featured: <a itemprop="name" href="{{ featured.url }}">{{ featured.data.title }}</a></h1>
+    <h2 itemprop="description">{{ featured.data.description }}</h2>
+  </div>
+  <figure class="figure span-6">
+    <a href="{{ featured.url }}">
+      {% if featured.data.images %}
+        <img itemprop="image" src="{{ featured.url + featured.data.images[0] }}" alt="{{ featured.data.title }} image one">
+      {% else %}
+        <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
+      {% endif %}
+    </a>
+    <span class="buttons">
+      {% if featured.data.links.download %}
+        <a class="button" itemprop="url" href="{{ featured.data.links.download }}">Download <svg class="icon icon-install"><use xlink:href="#icon-install"></use></svg></a>
+      {% endif %}
+      {% if featured.data.links.repo %}
+        <a class="button" itemprop="url" href="{{ featured.data.links.repo }}">View repo <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
+      {% endif %}
+      {% if featured.data.links.demo %}
+        <a class="button" itemprop="sameAs" href="{{ featured.data.links.demo }}">View demo <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
+      {% endif %}
+    </span>
+  </figure>
+</article>

@@ -17,8 +17,8 @@ title: Theme Name
 description: Short description
 date: 02-28-1938 # Submission date
 tags:
-  - site # Must include site or theme, can include 1 other descriptive tag (see other submissions for reference)
-  - theme
+  - minimal # A single descriptive tag
+  - showcase # Add this tag if your submission is a site
 links:
   repo: https://github.com/username/reponame # Optional
   download: https://themedownload.link # Optional

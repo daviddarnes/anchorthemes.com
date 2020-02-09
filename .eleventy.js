@@ -47,7 +47,7 @@ module.exports = function(config) {
       input: "src",
       output: "dist"
     },
-    templateFormats: ["njk", "md", "css", "js", "jpg", "gif", "svg", "png", "ico", "woff", "ttf"],
+    templateFormats: ["njk", "md", "css", "js", "jpg", "gif", "svg", "png", "ico"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true

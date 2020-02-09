@@ -1,16 +1,12 @@
-{% macro footer(site, page) %}
-    <footer class="footer container">
-        <div class="row">
-            <aside class="span-6">
-                <p>&copy; {{ site.title }}. Created by <a href="https://darn.es">David Darnes</a>.</p>
-            </aside>
-            {% if site.nav.footer %}
-              <nav class="menu span-6" role="navigation">
-                {% for item in site.nav.footer %}
-                  <a href="{{ item.url }}" {{ 'class="active"' if item.url == page.url }} {{ 'style=color:' + item.color if item.color }}>{{ item.title }}</a>
-                {% endfor %}
-              </nav>
-            {% endif %}
-        </div>
-    </footer>
-{% endmacro %}
+<footer class="footer container row">
+  <aside class="span-6">
+    <p>{{ site.colophon | safe }}</p>
+  </aside>
+  {% if site.nav.footer %}
+    <nav class="menu span-6" role="navigation">
+      {% for item in site.nav.footer %}
+        <a href="{{ item.url }}" {{ 'class="active"' if item.url == page.url }} {{ 'style=color:' + item.color if item.color }}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  {% endif %}
+</footer>

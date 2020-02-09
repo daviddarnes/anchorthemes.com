@@ -1,0 +1,43 @@
+{% macro card(submission, index) %}
+  <article class="article span-3" itemscope itemtype="http://schema.org/CreativeWork">
+    <figure class="figure">
+      <a href="{{ submission.url }}">
+        {% if submission.data.images %}
+        <img itemprop="image" src="{{ submission.url + submission.data.images[0] }}" alt="{{ submission.data.title }}" />
+        {% else %}
+          <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
+        {% endif %}
+      </a>
+      <span class="buttons">
+        {% if submission.data.links.download %}
+          <a itemprop="url" href="{{ submission.data.links.download }}" class="button" title="Download {{ submission.title }}">
+            <svg class="icon icon-install"><use xlink:href="#icon-install"></use></svg>
+          </a>
+        {% endif %}
+        {% if submission.data.links.repo %}
+          <a itemprop="url" href="{{ submission.data.links.repo }}" class="button" target="_blank" rel="noopener" title="View {{ submission.title }} Repo">
+            <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
+          </a>
+        {% endif %}
+      </span>
+    </figure>
+    <div class="hgroup">
+      <h2>
+        <a itemprop="name" href="{{ url }}">{{ submission.data.title }}</a>
+        {% if submission.data.author %}
+          {% set authorLine %}
+            {% if submission.data.author.url %}
+              <a itemprop="creator" target="_blank" rel="noopener" href="{{ submission.data.author.url }}">{{ submission.data.author.name }}</a>
+            {% else %}
+              {{ submission.data.author.name }}
+            {% endif %}
+          {% endset %}
+          by {{ authorLine | safe }}
+        {% endif %}
+      </h2>
+      <h3>Filed under <a itemprop="genre" href="/{{ submission.data.tags[1] | lower | replace(" ", "-") }}">{{ submission.data.tags[1] }}</a></h3>
+
+      <small>Added <time itemprop="dateCreated" datetime="{{ submission.date }}">{{ submission.date.toLocaleDateString("en-GB", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) }}</time></small>
+    </div>
+  </article>
+{% endmacro %}

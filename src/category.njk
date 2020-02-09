@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /{{ tag | replace(" ", "-") | lower }}/
+layout: "layouts/default.njk"
+---
+
+{% if page.url == "/showcase/" %}
+  {% include 'partials/showcasestyles.njk' %}
+{% endif %}
+
+<main class="main">
+  <div class="container row">
+    {% from "partials/card.njk" import card %}
+    {% set tagList = collections[tag] %}
+    {% for submission in tagList | reverse %}
+      {{ card(submission, loop.index) }}
+    {% endfor %}
+    {% include 'partials/ad.njk' %}
+  </div>
+</main>

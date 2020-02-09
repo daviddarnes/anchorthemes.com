@@ -1,0 +1,82 @@
+---
+layout: "layouts/default.njk"
+---
+
+{% if "showcase" in tags | join("") %}
+  {% include 'partials/showcasestyles.njk' %}
+{% endif %}
+
+<main class="main submission">
+  <article class="article container">
+    <div class="row">
+      <div class="span-5">
+        <h2 itemprop="description">{{ description }}</h2>
+        <div itemprop="about">{{ content | safe }}</div>
+
+        {% if author %}
+          {% set authorLine %}
+            {% if author.url %}
+              <a itemprop="creator" target="_blank" rel="noopener" href="{{ author.url }}">{{ author.name }}</a>
+            {% else %}
+              {{ author.name }}
+            {% endif %}
+          {% endset %}
+          <h3>Created by {{ authorLine | safe }}</h3>
+        {% endif %}
+
+        <h3>Filed under <a itemprop="genre" href="/{{ tags[1] | lower | replace(" ", "-") }}">{{ tags[1] }}</a></h3>
+        <p>
+          {% if links.download %}
+            <a itemprop="url" class="button" href="{{ links.download }}">Download <svg class="icon icon-install"><use xlink:href="#icon-install"></use></svg></a>
+          {% endif %}
+          {% if links.repo %}
+            <a itemprop="url" class="button" href="{{ links.repo }}">View repo <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
+          {% endif %}
+          {% if links.demo %}
+            <a itemprop="sameAs" href="{{ links.demo }}">View demo <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
+          {% endif %}
+
+          {% set twitterText %}Check out {{ title }} {% if author.name %} by {{ author.name }}{% endif %}{% endset %}
+
+          <a class="button button--tweet" href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + page.url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener">Tweet <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+        </p>
+      </div>
+      <div class="span-7 screens">
+        <div class="slider">
+          {% if images %}
+            {% for image in images %}
+              <img itemprop="image" src="{{ image }}" alt="{{ title }} image one" width="1080" height="840" />
+            {% endfor %}
+          {% else %}
+            <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </article>
+  <section class="container related">
+    <div class="row">
+      <h2 class="span-12">Related</h2>
+      {% from "partials/card.njk" import card %}
+      {% for submission in collections.submission | reverse %}
+        {% if tags[1] in submission.data.tags[1] and title != submission.data.title %}
+          {{ card(submission, loop.index) }}
+        {% endif %}
+      {% endfor %}
+      {% include 'partials/ad.njk' %}
+    </div>
+  </section>
+</main>
+<!-- Super simple slider plugin from http://responsive-slides.viljamis.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.js"></script>
+<script type="text/javascript">
+    // responsiveslides.min.js run script.
+    $(function () {
+            $(".slider").responsiveSlides({
+                nav: true,
+                pause: true,
+                prevText: `<svg class="icon icon-chevron-thin-left"><use xlink:href="#icon-chevron-thin-left"></use></svg>`,
+                nextText: `<svg class="icon icon-chevron-thin-right"><use xlink:href="#icon-chevron-thin-right"></use></svg>`,
+            });
+    });
+</script>

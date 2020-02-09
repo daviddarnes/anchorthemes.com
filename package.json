@@ -1,7 +1,7 @@
 {
-  "name": "AnchorThemes-AnchorShowcase",
+  "name": "anchorthemes.com",
   "version": "1.0.0",
-  "description": "⚓️Source repo for Anchor Themes and Anchor Showcase",
+  "description": "⚓️ Source repo for Anchor Themes and Anchor Showcase",
   "main": ".eleventy.js",
   "scripts": {
     "dev": "ELEVENTY_ENV=dev eleventy --serve",
