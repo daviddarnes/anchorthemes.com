@@ -9,12 +9,12 @@ layout: "layouts/default.njk"
         {% if description %}
           <h2 itemprop="description">{{ description }}</h2>
         {% endif %}
-        <div itemprop="about">{{ content }}</div>
+        <div itemprop="about">{{ content | safe }}</div>
       </div>
       <aside class="aside span-4">
-        <h2>Useful Pages</h2>
+        <h2>Useful links</h2>
         <ul>
-          {% for item in site.sidebar %}
+          {% for item in site.nav.sidebar %}
             <li><a href="{{ item.url }}">{{ item.title }}</a></li>
           {% endfor %}
         </ul>

@@ -18,7 +18,7 @@ module.exports = {
         color: "#e11d82"
       },
       {
-        url: "https://github.com/daviddarnes/anchorthemes.com/issues/new",
+        url: "https://github.com/daviddarnes/anchorthemes.com#submitting-a-theme-or-site",
         title: "Submit"
       }
     ],
