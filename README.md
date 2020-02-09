@@ -1,12 +1,12 @@
 # anchorthemes.com
-⚓️Source repo for Anchor Themes
+⚓️ Source repo for Anchor Themes and Anchor Showcase
 
-## Submitting a theme
+## Submitting a theme or site
 
 Create a new pull request with a new `index.md` file using a specific file name and path:
 
 ```
-/src/themes/YOURTHEMENAME/index.md
+/src/submissions/YOURTHEMENAMEORSITENAME/index.md
 ```
 
 Use the following template for the contents of the `index.md` file:
@@ -17,11 +17,12 @@ title: Theme Name
 description: Short description
 date: 02-28-1938 # Submission date
 tags:
-  - "Descriptive tag" # e.g. Minimal, see other themes for reference
+  - site # Must include site or theme, can include 1 other descriptive tag (see other submissions for reference)
+  - theme
 links:
-  repo: https://github.com/username/reponame
-  download: https://themedownload.link
-  demo: https://demo.url # Optional
+  repo: https://github.com/username/reponame # Optional
+  download: https://themedownload.link # Optional
+  demo: https://demo.url # Link to theme demo or site
 author:
   name: Your Name
   url: https://yourpersonal.site
@@ -31,13 +32,13 @@ images:
   - 3.jpg
 ---
 
-A somewhat brief description of your theme. You can put maybe a paragraph or two in here, list some features too if you like
+A somewhat brief description of your theme or site. You can put maybe a paragraph or two in here, list some features too if you like
 ```
 
 Alongside the new `index.md` file you can add screenshots as `.jpg` files. The dimensions should be `1080` by `840` in pixels. Here's an example of the file structure:
 
 ``` txt
-/src/themes/yourthemename/
+/src/submissions/YOURTHEMENAMEORSITENAME/
     index.md
     1.jpg
     2.jpg
