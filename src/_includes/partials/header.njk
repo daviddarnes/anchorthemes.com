@@ -16,8 +16,11 @@
       <p><strong>{{ site.title }}</strong> <span>–</span> {{ site.description | safe }}</p>
     </aside>
   </div>
-  {% if page.url == '/' %}
-    {% include 'partials/feature.njk' %}
+  {% from "partials/feature.njk" import feature %}
+  {% if page.url == "/" %}
+    {{ feature(collections.featuredTheme[0]) }}
+  {% elseif page.url == "/showcase/" %}
+    {{ feature(collections.featuredSite[0]) }}
   {% else %}
     <div class="container" id="parallax" class="name">
       <h1>{% if title %}{{ title }}{% else %}{{ tag | capitalize }}{% endif %}</h1>

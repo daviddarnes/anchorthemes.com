@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Forsman Brewing is really just me, Mark Forsman"
 title:  "Forsman Brewing"
 date: 2014-02-23 10:56:58
 tags:
