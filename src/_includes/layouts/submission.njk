@@ -36,7 +36,7 @@ layout: "layouts/default.njk"
             <a itemprop="sameAs" href="{{ links.url }}">View {{title}} <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
           {% endif %}
 
-          {% set twitterText %}Check out {{ title }} {% if author.name %} by {{ author.name }}{% endif %}{% endset %}
+          {% set twitterText %}Check out {{ title }} {% if author.name %} by {{ author.name }}{% endif %} {{ url }}{% endset %}
 
           <a class="button button--tweet" href="http://twitter.com/intent/tweet?text={{ twitterText | replace(" ", "%20") }}&amp;url={{ site.url + page.url }}&amp;via={{ site.twitter }}" class="entypo-twitter" target="_blank" rel="noopener">Tweet <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
         </p>
