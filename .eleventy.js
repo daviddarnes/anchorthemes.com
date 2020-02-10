@@ -33,6 +33,11 @@ module.exports = function(config) {
   //   imgSelector: "main img"
   // });
 
+  // Date formatting filter
+  config.addFilter("htmlDateString", dateObj => {
+    return new Date(dateObj).toISOString().split("T")[0];
+  });
+
   // Copy images over from Ghost
   config.addPlugin(localImages, {
     distPath: "dist",
