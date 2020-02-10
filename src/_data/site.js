@@ -1,4 +1,5 @@
 module.exports = {
+  url: "https://anchorthemes.com",
   title: "Anchor Themes",
   description: `Themes and sites built for <a href="https://anchorcms.com">Anchor</a>, obviously`,
   colophon: `&copy; Anchor Themes &amp; Anchor Showcase. Created by <a href="https://darn.es">David Darnes</a>.`,
