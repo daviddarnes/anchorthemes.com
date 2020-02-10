@@ -7,6 +7,10 @@ links:
 tags:
   - Portfolio
   - showcase
+images:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
 ---
 
 Using a combination of Bootstrap, WebGL, and Anchor CMS, Benjamin created his personal portfolio. The site features a range of portfolio work, some information about Ben, and an animated logo using `<canvas>`.
