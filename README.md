@@ -22,7 +22,7 @@ tags:
 links:
   repo: https://github.com/username/reponame # Optional
   download: https://themedownload.link # Optional
-  demo: https://demo.url # Link to theme demo or site
+  url: https://example.com # Link to theme demo or site
 author:
   name: Your Name
   url: https://yourpersonal.site

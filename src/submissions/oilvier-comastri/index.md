@@ -2,6 +2,8 @@
 description: ""
 title:  "Oilvier Comastri"
 date: 2013-06-06 23:07:41
+links:
+  url: http://blog.comastr.io/
 tags:
   - Blog
   - showcase

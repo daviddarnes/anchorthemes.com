@@ -19,8 +19,8 @@
         {% if featured.data.links.repo %}
           <a class="button" itemprop="url" href="{{ featured.data.links.repo }}">View repo <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
         {% endif %}
-        {% if featured.data.links.demo %}
-          <a class="button" itemprop="sameAs" href="{{ featured.data.links.demo }}">View demo <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
+        {% if featured.data.links.url %}
+          <a class="button" itemprop="sameAs" href="{{ featured.data.links.url }}">View {{featured.data.title}} <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
         {% endif %}
       </span>
     </figure>

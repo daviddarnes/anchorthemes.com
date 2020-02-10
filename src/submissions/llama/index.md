@@ -17,5 +17,3 @@ images:
 ---
 
 This is a simple Android 'L' styled theme for Anchor CMS, what you see is what you get.
-
-See the demo [on my site](http://thedevshed.co.uk/)

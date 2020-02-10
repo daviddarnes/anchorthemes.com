@@ -2,6 +2,8 @@
 description: ""
 title:  "Tijme Gommers"
 date: 2017-03-07 23:28:44
+links:
+  url: https://tij.me/
 tags:
   - Blog
   - showcase

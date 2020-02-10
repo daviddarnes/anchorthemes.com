@@ -2,6 +2,8 @@
 description: ""
 title:  "Studs.me"
 date: 2015-05-03 16:31:12
+links:
+  url: http://studs.me/
 tags:
   - Content Driven
   - showcase

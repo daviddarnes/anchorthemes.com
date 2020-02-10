@@ -32,8 +32,8 @@ layout: "layouts/default.njk"
           {% if links.repo %}
             <a itemprop="url" class="button" href="{{ links.repo }}">View repo <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
           {% endif %}
-          {% if links.demo %}
-            <a itemprop="sameAs" href="{{ links.demo }}">View demo <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
+          {% if links.url %}
+            <a itemprop="sameAs" href="{{ links.url }}">View {{title}} <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg></a>
           {% endif %}
 
           {% set twitterText %}Check out {{ title }} {% if author.name %} by {{ author.name }}{% endif %}{% endset %}

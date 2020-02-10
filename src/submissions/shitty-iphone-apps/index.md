@@ -2,6 +2,8 @@
 description: ""
 title:  "Shitty iPhone Apps"
 date: 2014-02-08 20:21:16
+links:
+  url: https://www.shittyiphoneapps.com/
 tags:
   - Reviews
   - showcase
