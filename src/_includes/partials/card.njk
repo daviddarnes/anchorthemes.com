@@ -3,13 +3,13 @@
     <figure class="figure">
       <a href="{{ submission.url }}">
         {% if submission.data.images %}
-        <img itemprop="image" src="{{ submission.url + submission.data.images[0] }}" alt="{{ submission.data.title }}" />
+        <img itemprop="image" src="{{ submission.url + submission.data.images[0] }}" alt="{{ submission.title }}" />
         {% else %}
           <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
         {% endif %}
       </a>
       <span class="buttons">
-        {% if "showcase" in submission.data.tags | join("") %}
+        {% if submission.data.links.demo %}
           <a itemprop="url" href="{{ submission.data.links.demo }}" class="button" title="View {{ submission.title }}">
             <svg class="icon icon-browser"><use xlink:href="#icon-browser"></use></svg>
           </a>
