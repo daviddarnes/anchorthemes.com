@@ -7,6 +7,7 @@ links:
 tags:
   - Blog
   - showcase
+  - featuredSite
 images:
   - 1.jpg
   - 2.jpg
