@@ -498,6 +498,22 @@ a.button:active,
   text-align: right;
 }
 
+.banner {
+	padding: 1em 1.6em;
+	text-align: center;
+	background: #3466b1;
+	color: white;
+}
+
+.banner p, .banner a {
+	color: inherit;
+	margin: 0 0 .2em;
+}
+
+.banner	a {
+	font-weight: 500;
+}
+
 .header {
   overflow: hidden;
   position: relative;
