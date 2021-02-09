@@ -499,19 +499,20 @@ a.button:active,
 }
 
 .banner {
-	padding: 1em 1.6em;
-	text-align: center;
-	background: #3466b1;
-	color: white;
+  padding: 1em 1.6em;
+  text-align: center;
+  background: #3466b1;
+  color: white;
 }
 
 .banner p, .banner a {
-	color: inherit;
-	margin: 0 0 .2em;
+  color: inherit;
+  margin: 0 0 .2em;
+  padding: 0;
 }
 
 .banner	a {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .header {
