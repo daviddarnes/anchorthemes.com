@@ -513,6 +513,7 @@ a.button:active,
 
 .banner	a {
   font-weight: 500;
+  text-decoration: underline;
 }
 
 .header {
