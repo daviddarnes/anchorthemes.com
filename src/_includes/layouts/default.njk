@@ -10,7 +10,6 @@
     {% include 'partials/footer.njk' %}
 
     <!-- Fancy javascript -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" defer></script>
     <script type="text/javascript">
       // Parallax header content
       window.onscroll = function emParallax() {
@@ -22,32 +21,30 @@
       }
 
       // Mobile menu toggle
-      $(document).ready(function() {
-          var menu = $('.menu'),
-              button = $('.toggle');
-          button.on('click', function(e) {
+          var menu = document.querySelector('.menu'),
+              button = document.querySelector('.toggle');
+          button.addEventListener('click', function(e) {
               e.preventDefault();
-              menu.toggleClass('open');
+              menu.classList.toggle('open');
           });
-      });
 
       // After midnight but before 5am...
       var currentTime = new Date().getHours();
       if (0 <= currentTime&&currentTime < 5 || localStorage.nightMode=="true") {
-        jQuery('head').append("<link rel='stylesheet' href='/assets/gizmo.css' type='text/css' title='gizmo'>");
+        document.querySelector('head').insertAdjacentHTML("beforeend", "<link rel='stylesheet' href='/assets/gizmo.css' type='text/css' title='gizmo'>");
       }
       window.onkeypress = function(e) {
         // Pressing 'n' adds...
         if( e.keyCode == 110 ) {
           localStorage.nightMode = true;
-          if(!jQuery('link[title=gizmo]').length){
-            jQuery('head').append("<link rel='stylesheet' href='/assets/gizmo.css' type='text/css' title='gizmo'>");
+          if(!document.querySelector('link[title=gizmo]')){
+            document.querySelector('head').insertAdjacentHTML("beforeend", "<link rel='stylesheet' href='/assets/gizmo.css' type='text/css' title='gizmo'>");
           }
         }
         // Pressing 'd' removes...
         if( e.keyCode == 100 ) {
           localStorage.nightMode = false;
-          jQuery('link[title=gizmo]').remove();
+          document.querySelector('link[title=gizmo]').remove();
         }
       }
 
