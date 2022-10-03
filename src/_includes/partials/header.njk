@@ -10,7 +10,7 @@
         {% for item in site.nav.header %}
           <a href="{{ item.url }}"{% if item.url === url %}class="active"{% endif %} {{ 'style=color:' + item.color if item.color }}>{{ item.title }}</a>
         {% endfor %}
-        <button href="#" class="toggle"><span></span></button>
+        <button href="#" class="toggle" aria-label="Menu"><span></span></button>
       </nav>
     {% endif %}
     <aside class="aside span-5">

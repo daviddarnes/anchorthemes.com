@@ -9,9 +9,9 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/">
 
   <!-- Styles -->
-  <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <!-- Open graph meta -->
   <meta property="og:type" content="website">
@@ -92,33 +92,4 @@
     <!-- Twitter meta -->
     <meta name="twitter:image" content="/assets/images/twitter.png">
   {% endif %}
-
-  <!-- Fancy javascript -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript">
-    // After midnight but before 5am...
-    var currentTime = new Date().getHours();
-    if (0 <= currentTime&&currentTime < 5 || localStorage.nightMode=="true") {
-      jQuery('head').append("<link rel='stylesheet' href='/assets/gizmo.css' type='text/css' title='gizmo'>");
-    }
-    window.onkeypress = function(e) {
-      // Pressing 'n' adds...
-      if( e.keyCode == 110 ) {
-        localStorage.nightMode = true;
-        if(!jQuery('link[title=gizmo]').length){
-          jQuery('head').append("<link rel='stylesheet' href='/assets/gizmo.css' type='text/css' title='gizmo'>");
-        }
-      }
-      // Pressing 'd' removes...
-      if( e.keyCode == 100 ) {
-        localStorage.nightMode = false;
-        jQuery('link[title=gizmo]').remove();
-      }
-    }
-    // The turret wants to know...
-    var title = document.title;
-    var alttitle = "Are you still there?";
-    window.onblur = function () { document.title = alttitle; };
-    window.onfocus = function () { document.title = title; };
-  </script>
 </head>
