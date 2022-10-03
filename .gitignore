@@ -60,3 +60,4 @@ typings/
 
 # Eleventy dist
 dist/
+.cache/

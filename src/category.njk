@@ -5,6 +5,7 @@ pagination:
   alias: tag
 permalink: /{{ tag | replace(" ", "-") | lower }}/
 layout: "layouts/default.njk"
+eleventyExcludeFromCollections: true
 ---
 
 {% if page.url == "/showcase/" %}
@@ -16,7 +17,7 @@ layout: "layouts/default.njk"
     {% from "partials/card.njk" import card %}
     {% set tagList = collections[tag] %}
     {% for submission in tagList | reverse %}
-      {{ card(submission, loop.index) }}
+      {{ card(submission, loop.index, site) }}
     {% endfor %}
     {% include 'partials/ad.njk' %}
   </div>

@@ -1,12 +1,8 @@
-{% macro card(submission, index) %}
+{% macro card(submission, index, site) %}
   <article class="article span-3" itemscope itemtype="http://schema.org/CreativeWork">
     <figure class="figure">
       <a href="{{ submission.url }}">
-        {% if submission.data.images %}
-        <img itemprop="image" src="{{ submission.url + submission.data.images[0] }}" alt="{{ submission.title }}" />
-        {% else %}
-          <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
-        {% endif %}
+        {% image "./src" + submission.url + submission.data.images[0], submission.data.title, "(max-width: 767px) 50vw, (max-width: 1200px) 25vw, 550px" %}
       </a>
       <span class="buttons">
         {% if submission.data.links.demo %}

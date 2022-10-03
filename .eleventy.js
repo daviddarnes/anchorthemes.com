@@ -1,60 +1,54 @@
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
-const localImages = require("eleventy-plugin-local-images");
-const lazyImages = require("eleventy-plugin-lazyimages");
-const htmlmin = require('html-minifier');
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
 
-const htmlMinTransform = (value, outputPath) => {
-  if (outputPath.indexOf('.html') > -1) {
-    let minified = htmlmin.minify(value, {
-      useShortDoctype: true,
-      removeComments: true,
-      collapseWhitespace: true,
-      minifyCSS: true
-    });
-    return minified;
-  }
-  return value;
-};
-
-module.exports = function(config) {
-
+module.exports = function (config) {
   // Merge default an theme specific tags together
   config.setDataDeepMerge(true);
 
-  // Minify HTML
-  config.addTransform("htmlmin", htmlMinTransform);
+  config.addPassthroughCopy("./src/submissions/**/*.jpg");
+  config.addPassthroughCopy("./src/assets/*");
+  config.addPassthroughCopy("./src/assets/images/*");
 
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
 
-  // Apply performance attributes to images
-  // config.addPlugin(lazyImages, {
-  //   cacheFile: "",
-  //   imgSelector: "main img"
-  // });
+  // Resize images
+  function imageShortcode(src, alt, sizes) {
+    let options = {
+      widths: [140, 170, 275, 340, 550, 564, 700, 1080],
+      urlPath: `${path.dirname(src).replace("./src/", "/")}/`,
+      outputDir: `${path.dirname(src).replace("./src/", "./dist/")}/`,
+    };
+
+    Image(src, options);
+
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+
+    let metadata = Image.statsSync(src, options);
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+
+  config.addNunjucksShortcode("image", imageShortcode);
 
   // Date formatting filter
-  config.addFilter("htmlDateString", dateObj => {
+  config.addFilter("htmlDateString", (dateObj) => {
     return new Date(dateObj).toISOString().split("T")[0];
-  });
-
-  // Copy images over from Ghost
-  config.addPlugin(localImages, {
-    distPath: "dist",
-    assetPath: "/assets/images",
-    selector: "img",
-    attribute: "data-src", // Lazy images attribute
-    verbose: false
   });
 
   return {
     dir: {
       input: "src",
-      output: "dist"
+      output: "dist",
     },
-    templateFormats: ["njk", "md", "css", "js", "jpg", "gif", "svg", "png", "ico"],
+    templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   };
 };

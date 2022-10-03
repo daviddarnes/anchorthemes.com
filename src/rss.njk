@@ -1,0 +1,40 @@
+---
+permalink: "/rss.xml"
+eleventyExcludeFromCollections: true
+layout: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/" version="2.0"
+>
+  <channel>
+    <title><![CDATA[{{ site.title }}]]></title>
+    <description><![CDATA[{{ site.description | safe }}]]></description>
+    <link>{{ site.url }}</link>
+    <image>
+       <url>{{ site.url }}/assets/images/logo.png</url>
+       <title>{{ site.title }}</title>
+       <link>{{ site.url }}</link>
+    </image>
+    <lastBuildDate>{{ collections.submission | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
+    <atom:link href="{{ site.url + page.url }}" rel="self" type="application/rss+xml" />
+    <ttl>60</ttl>
+    {%- for submission in collections.submission | reverse %}
+      {%- set absolutePostUrl = submission.url | absoluteUrl(site.url) %}
+      <item>
+         <title><![CDATA[{{ submission.data.title | safe }}]]></title>
+         <link>{{ absolutePostUrl }}</link>
+         <guid isPermaLink="false">{{ submission.url }}</guid>
+         {%- if submission.data.author -%}
+         <dc:creator><![CDATA[{{ submission.data.author.name }}]]></dc:creator>
+         {%- endif -%}
+         <pubDate>{{ submission.date | dateToRfc3339 }}</pubDate>
+         <description><![CDATA[{{ submission.data.description | safe }}]]></description>
+         <content:encoded><![CDATA[<img src="{{ absolutePostUrl }}{{ submission.data.images[0] }}" alt="{{ submission.data.title }} image one" width="1080" height="840" /><br>{{ submission.content | htmlToAbsoluteUrls(site.url) | safe }}]]></content:encoded>
+      </item>
+    {%- endfor -%}
+  </channel>
+</rss>

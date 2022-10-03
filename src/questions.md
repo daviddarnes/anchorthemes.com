@@ -1,7 +1,9 @@
 ---
 layout: "layouts/page.njk"
 title: "Questions"
+eleventyExcludeFromCollections: true
 ---
+
 ## Can I submit a site I made using Anchor CMS?
 
 Yes, you certainly can! Use the [submission process shown on the GitHub Repo](https://github.com/daviddarnes/anchorthemes.com#submitting-a-theme-or-site).

@@ -1,6 +1,7 @@
 ---
 layout: "layouts/page.njk"
 title: "About Anchor Themes"
+eleventyExcludeFromCollections: true
 ---
 
 Anchor Themes is a site devoted to showcasing the best themes available for the ever more popular [Anchor CMS](http://anchorcms.com/ "Anchor CMS"). Theming for Anchor is a doddle and using Anchor is even easier. Anchor has been specifically designed to be fast, lightweight and of course simple. Allowing you to just write.

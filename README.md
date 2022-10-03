@@ -1,4 +1,5 @@
 # anchorthemes.com
+
 ⚓️ Source repo for Anchor Themes and Anchor Showcase
 
 ## Submitting a theme or site
@@ -11,7 +12,7 @@ Create a new pull request with a new `index.md` file using a specific file name 
 
 Use the following template for the contents of the `index.md` file:
 
-``` md
+```md
 ---
 title: Name
 description: Short description
@@ -37,7 +38,7 @@ A somewhat brief description of your theme or site. You can put maybe a paragrap
 
 Alongside the new `index.md` file you can add screenshots as `.jpg` files. The dimensions should be `1080` by `840` in pixels. Here's an example of the file structure:
 
-``` txt
+```txt
 /src/submissions/your-theme-or-site-name/
     index.md
     1.jpg
@@ -49,9 +50,17 @@ Here's a handy [link for creating a new theme file](https://github.com/daviddarn
 
 ## Installing locally
 
-``` bash
+```bash
 git clone git@github.com:daviddarnes/anchorthemes.com.git
 cd anchorthemes.com
 npm install
 npm run dev
 ```
+
+## Terms
+
+Anchor Themes is not responsible for the upkeep of themes. All issues should be taken up by the respected theme creator. Any images representing themes and websites are owned by their respected theme creator or website owner.
+
+Any downloads and/or links provided are not maintained by Anchor Themes, but are maintained by the site they are hosted on or the theme creator they are associated with (e.g. a designers website or GitHub user).
+
+The maintenance of Anchor Themes can be periodic, and any updates to content can vary. Theme information pages will be updated if requested via [the official Twitter account](https://twitter.com/_anchorthemes "@_AnchorThemes").

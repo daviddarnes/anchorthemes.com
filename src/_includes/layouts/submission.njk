@@ -42,10 +42,11 @@ layout: "layouts/default.njk"
         </p>
       </div>
       <div class="span-7 screens">
+
         <div class="slider">
           {% if images %}
             {% for image in images %}
-              <img itemprop="image" src="{{ image }}" alt="{{ title }} image one" width="1080" height="840" />
+              {% image "./src" + page.url + image, title + " image " + loop.index, "(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 1080px" %}
             {% endfor %}
           {% else %}
             <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
@@ -60,7 +61,7 @@ layout: "layouts/default.njk"
       {% from "partials/card.njk" import card %}
       {% for submission in collections.submission | reverse %}
         {% if tags[1] in submission.data.tags[1] and title != submission.data.title %}
-          {{ card(submission, loop.index) }}
+          {{ card(submission, loop.index. site) }}
         {% endif %}
       {% endfor %}
       {% include 'partials/ad.njk' %}

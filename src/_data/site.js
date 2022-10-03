@@ -7,63 +7,50 @@ module.exports = {
     header: [
       {
         url: "/",
-        title: "Home"
+        title: "Home",
       },
       {
         url: "/about/",
-        title: "About"
+        title: "About",
       },
       {
         url: "/showcase/",
         title: "Showcase",
-        color: "#e11d82"
+        color: "#e11d82",
       },
       {
         url: "https://github.com/daviddarnes/anchorthemes.com#submitting-a-theme-or-site",
-        title: "Submit"
-      }
+        title: "Submit",
+      },
     ],
     footer: [
       {
         url: "https://twitter.com/_AnchorThemes",
-        title: "Anchor Themes on Twitter"
+        title: "Anchor Themes on Twitter",
       },
       {
         url: "https://twitter.com/AnchorShowcase",
         title: "Anchor Showcase on Twitter",
-        color: "#e11d82"
+        color: "#e11d82",
       },
       {
         url: "https://github.com/daviddarnes/anchorthemes.com#terms",
-        title: "Terms"
+        title: "Terms",
       },
-      {
-        url: "https://github.com/daviddarnes/anchorthemes.com#privacy",
-        title: "Privacy"
-      }
-
     ],
     sidebar: [
       {
-        title: "Anchor CMS",
-        url: "http://anchorcms.com/docs"
-      },
-      {
-        title: "Anchor Resources",
-        url: "http://anchorcms.com/resources"
-      },
-      {
-        title: "Anchor Discussion Forum",
-        url: "http://forums.anchorcms.com/"
+        title: "Anchor CMS docs",
+        url: "http://anchorcms.com/docs/",
       },
       {
         title: "Anchor CMS on GitHub",
-        url: "https://github.com/anchorcms"
+        url: "https://github.com/anchorcms",
       },
       {
         title: "Anchor CMS on Twitter",
-        url: "https://twitter.com/anchorcms"
-      }
-    ]
-  }
+        url: "https://twitter.com/anchorcms",
+      },
+    ],
+  },
 };
