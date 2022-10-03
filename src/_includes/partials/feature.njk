@@ -7,7 +7,7 @@
     <figure class="figure span-6">
       <a href="{{ featured.url }}">
         {% if featured.data.images %}
-          {% image "./src" + featured.url + featured.data.images[0], title + " image " + loop.index, "(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 1080px" %}
+          {% image "./src" + featured.url + featured.data.images[0], feature.data.title + " image", "(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 1080px" %}
         {% else %}
           <svg class="placeholder"><use xlink:href="#icon-image"></use></svg>
         {% endif %}
