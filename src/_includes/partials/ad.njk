@@ -4,7 +4,7 @@
 <article class="article ad span-3">
   <figure class="figure">
     <a href="{{ url }}" title="{{ title }}">
-      <img src="{{ site.url }}/assets/images/pactcoffee.png" alt="{{ title }}" width="440" height="260">
+      {% image "./src/assets/images/pactcoffee.png", title, "(max-width: 767px) 50vw, (max-width: 1200px) 25vw, 550px" %}
     </a>
     <span class="buttons">
       <a href="{{ url }}" class="button" target="_blank" rel="noopener" title="{{ title }}">

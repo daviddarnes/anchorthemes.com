@@ -356,7 +356,7 @@ a.button,
   transition: background 0.2s;
   background: var(--accent-vivid);
   color: var(--accent-lightest);
-  padding: 0.65em 1em 0.67em;
+  padding: 0.8em 1.2em 0.75em;
   border-radius: 5px;
   white-space: nowrap;
   cursor: pointer;
@@ -505,13 +505,14 @@ a.button:active,
   color: white;
 }
 
-.banner p, .banner a {
+.banner p,
+.banner a {
   color: inherit;
-  margin: 0 0 .2em;
+  margin: 0 0 0.2em;
   padding: 0;
 }
 
-.banner	a {
+.banner a {
   font-weight: 500;
   text-decoration: underline;
 }
